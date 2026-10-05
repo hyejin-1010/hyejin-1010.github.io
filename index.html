@@ -225,7 +225,7 @@
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
     <details class="deep"><summary>왜 전환했고, 무엇을 지켰나</summary>
-      <p><strong>전환 판단.</strong> 외주로 시작돼 누적된 기술 부채, 프론트 2명이 Dart·TS 두 언어를 병행하는 부담, 두 앱이 레포로 분리돼 생기는 이중 유지보수. 이 셋을 근거로 수정 비용이 재구축 비용을 넘었다고 판단해 RN 전환을 제안했다. RN을 고른 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다.</p>
+      <p><strong>전환 판단.</strong> 외주로 시작돼 누적된 기술 부채, 프론트 2명이 Dart·TS 두 언어를 병행하는 부담, 두 앱이 레포로 분리돼 생기는 이중 유지보수까지, 이 셋을 근거로 수정 비용이 재구축 비용을 넘었다고 판단해 RN 전환을 제안했다. RN을 고른 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다.</p>
       <p><strong>지킨 것.</strong> 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로, 기존 기능·UX를 1:1 재현하는 데 초기 설계·검증 시간을 집중 투자했다.</p>
       <p><strong>OTA 리스크 관리.</strong> 잘못된 업데이트가 전체 사용자에게 즉시 적용되는 위험이 있어, 도구 선정 단계에서 롤백 지원을 필수 기준으로 두고 Hot Updater를 선택·복구 절차를 검증했다.</p>
       <figure class="figure">
@@ -285,8 +285,7 @@
     <h3>가다 근로자앱·관리자앱 웹 (WebView 콘텐츠)</h3>
     <div class="meta"><span><b>2023.10 ~ 현재</b></span><span>근로자앱 핵심 기여 · 관리자앱 공동 개발</span></div>
     <p class="desc">
-      앱 화면 대부분을 구성하는 WebView 웹 서비스다(근로자앱 93개·관리자앱 44개 화면).
-      출역 지원·확인, 홈 팝업/배너/이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발했다.
+      앱 화면 대부분을 구성하는 WebView 웹 서비스다. 근로자앱 93개·관리자앱 44개 화면 규모로, 출역 지원·확인, 홈 팝업/배너/이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발했다.
     </p>
     <ul>
       <li><strong>끊기지 않는 딥링크</strong>: 푸시·배너로 들어온 사용자가 로그인·네이티브 간편인증을 거쳐도 목적지가 보존되는 흐름 설계(가로채기 → 보류 → 이어처리, 홈 우회 없는 복귀)</li>
