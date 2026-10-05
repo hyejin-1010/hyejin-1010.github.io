@@ -278,7 +278,7 @@
     </ul>
     <div class="stack"><span>Vue 3</span><span>TypeScript</span><span>Vite</span><span>Tailwind</span><span>PrimeVue</span></div>
     <details class="deep"><summary>설계 결정과 교훈</summary>
-      <p><strong>TS 도입 설득.</strong> 착수 시점(2023.10) 회사 프론트는 전부 JS였다. 수십 메뉴·복잡한 폼·권한이 얽힌 어드민은 시간이 갈수록 리팩토링 비용이 커질 것으로 보고 TS를 제안, 팀 동의를 얻어 셋업했다. 런타임에서 발견되던 undefined 참조가 개발 단계에서 잡히기 시작했고, 이후 신규 프로젝트가 TS를 기본 채택했다.</p>
+      <p><strong>TS 도입 설득.</strong> 착수 시점(2023.10) 회사 프론트는 전부 JS였다. 수십 메뉴·복잡한 폼·권한이 얽힌 어드민은 시간이 갈수록 리팩토링 비용이 커질 것으로 보고 TS를 제안하고 팀을 설득해 셋업했다. 이후 신규 프로젝트들이 TS를 기본으로 채택하며 전사 표준이 됐다.</p>
       <p><strong>추상화는 규모에 따라 재판단.</strong> 모든 입력 타입을 담던 단일 CustomInput이 타입 30개를 넘기며 1,000줄을 초과하고 readonly/disabled 개념이 섞였다. 2025.06 두 개념을 분리했고, 이후 본체를 키우는 대신 분리 가능한 타입을 독립 컴포넌트로 추출하는 방향으로 전환했다.</p>
       <p><strong>성능은 공통 레이어에서.</strong> 전 목록 화면의 기반인 useList에 500ms debounce를 한 번 넣어 중복 호출을 전역에서 제거 — 공통 추상화가 유지보수에 실제로 기여한 사례.</p>
     </details>
