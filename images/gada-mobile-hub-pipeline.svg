@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9CA3AF"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="560" fill="#F8FAFC" rx="16"/>
+
+  <!-- Divider -->
+  <line x1="440" y1="108" x2="440" y2="540" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- ===== START ===== -->
+  <rect x="300" y="24" width="280" height="52" rx="10" fill="#6366F1"/>
+  <text x="440" y="54" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="15" font-weight="600">코드 푸시 (Bitbucket)</text>
+
+  <!-- Arrow down from start -->
+  <line x1="440" y1="76" x2="440" y2="106" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <!-- Horizontal split -->
+  <line x1="200" y1="107" x2="670" y2="107" stroke="#9CA3AF" stroke-width="2"/>
+  <!-- Down to left -->
+  <line x1="200" y1="107" x2="200" y2="125" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <!-- Down to right -->
+  <line x1="670" y1="107" x2="670" y2="125" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== LEFT COLUMN — NATIVE ===== -->
+  <text x="200" y="142" text-anchor="middle" fill="#3B82F6" font-size="12" font-weight="700">네이티브 변경</text>
+
+  <!-- Box: 수동 파이프라인 실행 -->
+  <rect x="95" y="152" width="210" height="48" rx="8" fill="#3B82F6"/>
+  <text x="200" y="180" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="13" font-weight="500">수동 파이프라인 실행</text>
+
+  <line x1="200" y1="200" x2="200" y2="222" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Box: Fastlane -->
+  <rect x="95" y="224" width="210" height="48" rx="8" fill="#3B82F6"/>
+  <text x="200" y="252" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="13" font-weight="500">Fastlane</text>
+
+  <text x="200" y="286" text-anchor="middle" fill="#6B7280" font-size="11">AOS → iOS 순차 빌드 (단일 Runner)</text>
+
+  <line x1="200" y1="294" x2="200" y2="316" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Box: 자동 배포 -->
+  <rect x="95" y="318" width="210" height="68" rx="8" fill="#1E40AF"/>
+  <text x="200" y="340" text-anchor="middle" fill="white" font-size="12" font-weight="600">자동 배포</text>
+  <line x1="115" y1="350" x2="285" y2="350" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="200" y="364" text-anchor="middle" fill="white" font-size="11">TestFlight (iOS)</text>
+  <text x="200" y="380" text-anchor="middle" fill="white" font-size="11">Google Play 내부 테스트 (AOS)</text>
+
+  <!-- Badge: 1~3일 -->
+  <rect x="152" y="398" width="96" height="26" rx="13" fill="#DBEAFE"/>
+  <text x="200" y="415" text-anchor="middle" dominant-baseline="middle" fill="#1E40AF" font-size="12" font-weight="600">약 45분</text>
+
+  <!-- ===== RIGHT COLUMN — JS ===== -->
+  <text x="670" y="142" text-anchor="middle" fill="#059669" font-size="12" font-weight="700">JS 변경</text>
+
+  <!-- Box: Bitbucket Pipelines -->
+  <rect x="565" y="152" width="210" height="48" rx="8" fill="#059669"/>
+  <text x="670" y="180" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="13" font-weight="500">Bitbucket Pipelines (자동)</text>
+
+  <line x1="670" y1="200" x2="670" y2="222" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Box: 변경 범위 감지 (tall) -->
+  <rect x="565" y="224" width="210" height="98" rx="8" fill="#D97706"/>
+  <text x="670" y="248" text-anchor="middle" fill="white" font-size="13" font-weight="600">변경 범위 감지</text>
+  <line x1="585" y1="258" x2="755" y2="258" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="670" y="274" text-anchor="middle" fill="white" font-size="11">· managerApp만 변경</text>
+  <text x="670" y="291" text-anchor="middle" fill="white" font-size="11">· workerApp만 변경</text>
+  <text x="670" y="308" text-anchor="middle" fill="white" font-size="11">· 둘 다/공통 패키지 변경</text>
+
+  <line x1="670" y1="332" x2="670" y2="354" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Box: Hot Updater -->
+  <rect x="565" y="356" width="210" height="48" rx="8" fill="#059669"/>
+  <text x="670" y="384" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="13" font-weight="500">Hot Updater</text>
+
+  <text x="670" y="418" text-anchor="middle" fill="#6B7280" font-size="11">AOS · iOS 동시 OTA 배포</text>
+
+  <line x1="670" y1="426" x2="670" y2="448" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Box: OTA 배포 완료 -->
+  <rect x="565" y="450" width="210" height="48" rx="8" fill="#065F46"/>
+  <text x="670" y="478" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="13" font-weight="500">OTA 배포 완료</text>
+
+  <!-- Badge: 4분 이내 -->
+  <rect x="622" y="510" width="96" height="26" rx="13" fill="#D1FAE5"/>
+  <text x="670" y="527" text-anchor="middle" dominant-baseline="middle" fill="#065F46" font-size="12" font-weight="600">4분 이내</text>
+
+</svg>

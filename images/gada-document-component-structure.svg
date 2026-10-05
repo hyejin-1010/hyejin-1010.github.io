@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500" font-family="system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif">
+
+  <defs>
+    <marker id="arrowBlue" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#6366F1"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="500" fill="#F8FAFC" rx="16"/>
+
+  <!-- Title -->
+  <text x="430" y="32" text-anchor="middle" fill="#1E293B" font-size="15" font-weight="700">@worksmate-gada/gada-document-component</text>
+
+  <!-- ── PACKAGE BOX ── -->
+  <rect x="180" y="48" width="500" height="170" rx="10" fill="#6366F1"/>
+
+  <!-- package name -->
+  <text x="430" y="72" text-anchor="middle" fill="white" font-size="13" font-weight="700">패키지 컴포넌트</text>
+  <line x1="200" y1="80" x2="660" y2="80" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+  <!-- doc chips row 1 -->
+  <rect x="200" y="90" width="104" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="252" y="107" text-anchor="middle" fill="white" font-size="11">근로계약서</text>
+
+  <rect x="314" y="90" width="104" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="366" y="107" text-anchor="middle" fill="white" font-size="11">작업확인서</text>
+
+  <rect x="428" y="90" width="120" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="488" y="107" text-anchor="middle" fill="white" font-size="11">무사고귀환확인서</text>
+
+  <rect x="558" y="90" width="84" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="600" y="107" text-anchor="middle" fill="white" font-size="11">임금명세서</text>
+
+  <!-- doc chips row 2 -->
+  <rect x="200" y="126" width="104" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="252" y="143" text-anchor="middle" fill="white" font-size="11">노무비지급명세서</text>
+
+  <rect x="314" y="126" width="104" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="366" y="143" text-anchor="middle" fill="white" font-size="11">작업확인서</text>
+
+  <rect x="428" y="126" width="84" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="470" y="143" text-anchor="middle" fill="white" font-size="11">이력서</text>
+
+  <!-- custom badge -->
+  <rect x="200" y="162" width="440" height="44" rx="8" fill="rgba(255,255,255,0.10)"/>
+  <text x="420" y="180" text-anchor="middle" fill="#C7D2FE" font-size="11" font-weight="600">건설사별 커스텀 근로계약서</text>
+  <text x="420" y="197" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10">금강건설 · 대덕휴비즈 · A9 매송시스템 등 14종</text>
+
+  <!-- ── ARROWS down ── -->
+  <!-- to backoffice -->
+  <line x1="250" y1="218" x2="130" y2="308" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+  <!-- to office -->
+  <line x1="360" y1="218" x2="320" y2="308" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+  <!-- to worker -->
+  <line x1="500" y1="218" x2="540" y2="308" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+  <!-- to manager -->
+  <line x1="610" y1="218" x2="730" y2="308" stroke="#6366F1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowBlue)"/>
+
+  <!-- ── CONSUMER BOXES ── -->
+
+  <!-- backoffice -->
+  <rect x="44" y="308" width="172" height="72" rx="8" fill="white" stroke="#C7D2FE" stroke-width="1.5"/>
+  <text x="130" y="330" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="600">backoffice</text>
+  <line x1="60" y1="337" x2="200" y2="337" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="130" y="353" text-anchor="middle" fill="#64748B" font-size="10">백오피스 어드민</text>
+  <text x="130" y="369" text-anchor="middle" fill="#64748B" font-size="10">Vue 3 · TypeScript</text>
+
+  <!-- office -->
+  <rect x="234" y="308" width="172" height="72" rx="8" fill="white" stroke="#C7D2FE" stroke-width="1.5"/>
+  <text x="320" y="330" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="600">office</text>
+  <line x1="250" y1="337" x2="390" y2="337" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="320" y="353" text-anchor="middle" fill="#64748B" font-size="10">건설사 문서관리 웹</text>
+  <text x="320" y="369" text-anchor="middle" fill="#64748B" font-size="10">Vue 3 · TypeScript</text>
+
+  <!-- worker -->
+  <rect x="454" y="308" width="172" height="72" rx="8" fill="white" stroke="#C7D2FE" stroke-width="1.5"/>
+  <text x="540" y="330" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="600">worker</text>
+  <line x1="470" y1="337" x2="610" y2="337" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="540" y="353" text-anchor="middle" fill="#64748B" font-size="10">근로자 웹뷰</text>
+  <text x="540" y="369" text-anchor="middle" fill="#64748B" font-size="10">Vue 3 · TypeScript</text>
+
+  <!-- manager -->
+  <rect x="644" y="308" width="172" height="72" rx="8" fill="white" stroke="#C7D2FE" stroke-width="1.5"/>
+  <text x="730" y="330" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="600">manager</text>
+  <line x1="660" y1="337" x2="800" y2="337" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="730" y="353" text-anchor="middle" fill="#64748B" font-size="10">현장관리자 웹뷰</text>
+  <text x="730" y="369" text-anchor="middle" fill="#64748B" font-size="10">Vue 3 · TypeScript</text>
+
+  <!-- ── BOTTOM CALLOUT ── -->
+  <rect x="180" y="408" width="500" height="68" rx="10" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1.5"/>
+  <text x="430" y="432" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="700">패키지 버전 업 한 번 → 4개 프로젝트 동시 반영</text>
+  <line x1="200" y1="440" x2="660" y2="440" stroke="#C7D2FE" stroke-width="1"/>
+  <text x="430" y="457" text-anchor="middle" fill="#6366F1" font-size="11">문서 양식 변경 · 건설사별 커스텀 계약서 추가 · 버그 수정</text>
+  <text x="430" y="469" text-anchor="middle" fill="#6366F1" font-size="11">모두 패키지 한 곳에서 관리</text>
+
+</svg>
