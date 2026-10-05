@@ -304,9 +304,16 @@
     <h3>사내 개발 실험실 플랫폼 (dev-labs)</h3>
     <div class="meta"><span><b>2026.08 — 현재</b></span><span>기획·구축 단독</span></div>
     <p class="desc">
-      실험 기능을 빠르게 붙였다 뗄 수 있는 멀티 프로젝트 플랫폼을 직접 발제·구축.
-      배포 콘솔(CLI → 웹 UI) · 에러 수집 대시보드 · 근로자 행동 히트맵 · 봇 작업 실시간 대시보드를 이 위에서 운영한다.
+      누가 시켜서가 아니라 "이런 도구가 있으면 좋겠다" 싶은 것들을 직접 만들어 올리는 사내 실험실 플랫폼이다.
+      Traefik 아래 프로젝트별 스택을 독립적으로 붙였다 뗄 수 있게 설계해 아이디어를 부담 없이 실험하고, 검증된 것은 남긴다.
+      혼자 필요해서 시작한 도구들이 지금은 팀 전체가 쓰는 도구가 됐다.
     </p>
+    <ul>
+      <li><strong>배포 콘솔</strong> — CLI로만 가능하던 프론트 운영 배포를 웹 UI로. 배포 진입장벽이 사라져 누구나 배포할 수 있게 됐다</li>
+      <li><strong>에러 수집 대시보드</strong> — docker logs를 뒤져야 보이던 프로덕션 에러를 수집해 한 화면에서 조회</li>
+      <li><strong>근로자 행동 히트맵</strong> — 화면별 사용자 행동을 시각화한 사내 첫 행동 데이터 도구. UX 개선의 근거 제공</li>
+      <li><strong>봇 실시간 대시보드</strong> — 자동화 봇이 지금 어떤 작업을 어느 단계까지 진행 중인지 추적</li>
+    </ul>
     <div class="stack"><span>FastAPI</span><span>Vue 3</span><span>Docker</span><span>Traefik</span></div>
   </article>
 
