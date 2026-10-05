@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<title>김혜진 — 포트폴리오 (PDF)</title>
+<title>김혜진 · 포트폴리오 (PDF)</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
   @page { size: A4; margin: 17mm 16mm; }
@@ -66,10 +66,10 @@
 </header>
 
 <h2>Career <span style="font-weight:500;color:#6b7280;font-size:9.5pt;">총 약 7년</span></h2>
-<div class="row"><div class="k">2023.09 — 현재</div><div><b>Worksmate</b><span class="badge">2026.08~ 파트장 · 기획/FE/BE 3인 파트</span></div></div>
-<div class="row"><div class="k">2020.11 — 2023.05</div><div><b>Hello Factory</b></div></div>
-<div class="row"><div class="k">2020.03 — 2020.11</div><div><b>HAII</b></div></div>
-<div class="row"><div class="k">2019.01 — 2020.02</div><div><b>O2Palm</b></div></div>
+<div class="row"><div class="k">2023.09 ~ 현재</div><div><b>Worksmate</b><span class="badge">2026.08~ 파트장 · 기획/FE/BE 3인 파트</span></div></div>
+<div class="row"><div class="k">2020.11 ~ 2023.05</div><div><b>Hello Factory</b></div></div>
+<div class="row"><div class="k">2020.03 ~ 2020.11</div><div><b>HAII</b></div></div>
+<div class="row"><div class="k">2019.01 ~ 2020.02</div><div><b>O2Palm</b></div></div>
 
 <h2>Skills</h2>
 <div class="skills">
@@ -82,68 +82,68 @@
 <h2 class="page-break">Selected Work</h2>
 
 <div class="project">
-  <h3>가다 앱 — Flutter 유지보수 → React Native 전환</h3>
-  <div class="meta">2023.11 — 현재 · RN 전환·초기 구조 단독 주도 → 이후 공동 개발</div>
+  <h3>가다 앱 · Flutter 유지보수 → React Native 전환</h3>
+  <div class="meta">2023.11 ~ 현재 · RN 전환·초기 구조 단독 주도 → 이후 공동 개발</div>
   <p class="desc">2년간 유지보수한 Flutter 앱의 구조적 한계(기술 부채·두 언어 병행·레포 분리)를 근거로 React Native 전환을 직접 제안, 구조 설계부터 배포 파이프라인까지 단독 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합했다.</p>
   <ul>
-    <li><b>네이티브 화면 OTA 배포 1~3일 → 4분 이내</b> — 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
+    <li><b>네이티브 화면 OTA 배포 1~3일 → 4분 이내</b>: 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
     <li><b>앱 crash-free 사용자 99.96% / 세션 99.99%</b> 유지</li>
     <li>간편인증 중 OS 앱 종료 문제(건강검진서 등록)를 진행 상태 저장+재진입 이어하기로 해결·배포</li>
-    <li>Fastlane + Pipelines 배포 자동화 · <b>iOS·Android 병렬 빌드 40분 → 20분</b> — 트리거 후 개발자가 기다릴 필요 없음</li>
+    <li>Fastlane + Pipelines 배포 자동화 · <b>iOS·Android 병렬 빌드 40분 → 20분</b>: 트리거 후 개발자가 기다릴 필요 없음</li>
     <li>OTA 번들 업데이트(JS 재시작)에도 딥링크가 유실되지 않는 보존 설계</li>
     <li>오픈소스: channel_talk_flutter에 API 추가 PR 머지 (v4.1.0)</li>
   </ul>
   <div class="detail">
-    <p><b>전환 판단.</b> 수정 비용이 재구축 비용을 넘었다고 판단해 전환을 제안했다. RN 선택의 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점 — 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다. 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로 기존 기능·UX를 1:1 재현했다.</p>
+    <p><b>전환 판단.</b> 수정 비용이 재구축 비용을 넘었다고 판단해 전환을 제안했다. RN 선택의 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다. 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로 기존 기능·UX를 1:1 재현했다.</p>
     <p><b>OTA 리스크 관리.</b> 도구 선정 단계에서 롤백 지원을 필수 기준으로 두고 Hot Updater를 선택, 복구 절차를 검증했다.</p>
   </div>
   <div class="figs">
     <figure><img src="images/gada-mobile-hub-monorepo.svg" alt="모노레포 구조" /><figcaption>근로자앱·관리자앱 모노레포 구조</figcaption></figure>
-    <figure><img src="images/gada-mobile-hub-pipeline.svg" alt="배포 파이프라인" /><figcaption>배포 파이프라인 — 스토어 빌드 · OTA</figcaption></figure>
+    <figure><img src="images/gada-mobile-hub-pipeline.svg" alt="배포 파이프라인" /><figcaption>배포 파이프라인: 스토어 빌드 · OTA</figcaption></figure>
   </div>
 </div>
 
 <div class="project">
-  <h3>사내 개발 파이프라인 자동화 — AI 에이전트 오케스트레이션</h3>
-  <div class="meta">2024.06 — 현재 · 단독 설계·구축·운영 · Python, Slack Socket Mode</div>
+  <h3>사내 개발 파이프라인 자동화 (AI 에이전트 오케스트레이션)</h3>
+  <div class="meta">2024.06 ~ 현재 · 단독 설계·구축·운영 · Python, Slack Socket Mode</div>
   <p class="desc">프론트 2명 팀의 반복 작업(이슈 처리·배포 상태 관리·크래시 트리아지·정형 문서 생성)을 AI 에이전트를 오케스트레이션하는 자동화로 옮겼다. 이슈·배포·문서·리포트 등 자동화 10여 종을 상시 구동하고, 이를 감시하는 워치독 4종을 별도로 두어 운영한다.</p>
   <ul>
-    <li><b>이슈 → PR → 배포 루프 무인화</b> — 이슈당 개발자 1~2시간 들던 처리가 경미한 이슈 기준 확인·리뷰 5분 이내로 단축</li>
-    <li>적용 범위를 의도적으로 한정 — 핵심 제품이 아닌, 크래시 대응·보조 서비스 유지보수처럼 반복적이고 범위가 명확한 작업에만</li>
-    <li><b>정형 문서 자동 생성</b> — 엑셀 한 장 → PDF/xlsx. 건당 평균 2시간 걸리던 수기 작업을 요청자 셀프서비스로 전환, 개발자 관여 5분 이내</li>
-    <li><b>워치독 4종</b> — 파이프라인 실패·봇 연결 끊김·수집 키 오염·토큰 만료, 침묵 실패를 감지해 경보·자동 복구</li>
+    <li><b>이슈 → PR → 배포 루프 무인화</b>: 이슈당 개발자 1~2시간 들던 처리가 경미한 이슈 기준 확인·리뷰 5분 이내로 단축</li>
+    <li>적용 범위를 의도적으로 한정: 핵심 제품이 아닌, 크래시 대응·보조 서비스 유지보수처럼 반복적이고 범위가 명확한 작업에만</li>
+    <li><b>정형 문서 자동 생성</b>: 엑셀 한 장 → PDF/xlsx. 건당 평균 2시간 걸리던 수기 작업을 요청자 셀프서비스로 전환, 개발자 관여 5분 이내</li>
+    <li><b>워치독 4종</b>: 파이프라인 실패·봇 연결 끊김·수집 키 오염·토큰 만료, 침묵 실패를 감지해 경보·자동 복구</li>
   </ul>
 </div>
 
 <div class="project page-break">
   <h3>가다 백오피스</h3>
-  <div class="meta">2023.10 — 현재 · 초기 설계·구축 단독 주도 → 이후 공동 개발 · Vue3, TypeScript, Vite</div>
+  <div class="meta">2023.10 ~ 현재 · 초기 설계·구축 단독 주도 → 이후 공동 개발 · Vue3, TypeScript, Vite</div>
   <p class="desc">화면 약 100개 규모 어드민을 착수 시점부터 설계했다. 회사 첫 TypeScript 도입을 제안해 정착시켰고(이후 신규 프로젝트 기본 채택), 핵심 공통 컴포넌트를 직접 만들어 UI 표준을 세웠다.</p>
   <ul>
-    <li>상세 폼은 <b>필드 배열만 정의하면 자동 렌더링</b> — 새 메뉴 추가 시 폼 구현 비용 최소화</li>
+    <li>상세 폼은 <b>필드 배열만 정의하면 자동 렌더링</b>: 새 메뉴 추가 시 폼 구현 비용 최소화</li>
     <li>동일 columns 정의로 데스크탑 테이블 ↔ 모바일 카드뷰 자동 전환</li>
   </ul>
 </div>
 
 <div class="project">
-  <h3>사내 ERP (HR·근태·휴가·전자결재) — 자기주도 사이드</h3>
-  <div class="meta">2026.06 — 현재 · 기획·설계·구현·배포 단독 (근무 외) · TS 풀스택 모노레포, Docker</div>
+  <h3>사내 ERP (HR·근태·휴가·전자결재) · 자기주도 사이드</h3>
+  <div class="meta">2026.06 ~ 현재 · 기획·설계·구현·배포 단독 (근무 외) · TS 풀스택 모노레포, Docker</div>
   <p class="desc">회사의 고정 지출(그룹웨어 구독) 절감 니즈를 직접 풀기로 하고, 기존 ERP 분석부터 기획·개발·배포까지 근무 외 시간에 혼자 진행한 자기주도 프로젝트다. 동시에 AI를 끝까지 활용한 1인 딜리버리 실험. api+web 모노레포(화면 38) · 자체 인증 · Docker+CI. 구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접 내렸다.</p>
 </div>
 
 <div class="project">
   <h3>사내 개발 실험실 플랫폼 (dev-labs)</h3>
-  <div class="meta">2026.08 — 현재 · 발제·기획·구축 단독 · FastAPI, Vue3, Docker, Traefik</div>
-  <p class="desc">"이런 도구가 있으면 좋겠다" 싶은 것들을 직접 만들어 올리는 사내 실험실 플랫폼 — 개발·운영은 혼자, 사용자는 팀 전체인 플랫폼이다. 배포 콘솔(빌드·배포 분리 — 미리 빌드한 결과물을 골라 즉시 배포·롤백) · 에러 수집 대시보드(docker logs 가시성 통합) · 근로자 행동 히트맵(사내 첫 행동 데이터 도구) · 봇 실시간 대시보드를 운영한다.</p>
+  <div class="meta">2026.08 ~ 현재 · 발제·기획·구축 단독 · FastAPI, Vue3, Docker, Traefik</div>
+  <p class="desc">"이런 도구가 있으면 좋겠다" 싶은 것들을 직접 만들어 올리는 사내 실험실 플랫폼으로, 개발·운영은 혼자, 사용자는 팀 전체다. 배포 콘솔(빌드·배포 분리: 미리 빌드한 결과물을 골라 즉시 배포·롤백) · 에러 수집 대시보드(docker logs 가시성 통합) · 근로자 행동 히트맵(사내 첫 행동 데이터 도구) · 봇 실시간 대시보드를 운영한다.</p>
 </div>
 
 <div class="project">
   <h3>사내 전자문서 NPM 패키지</h3>
-  <div class="meta">2024.06 — 현재 · 설계·배포·운영 전담 · Vue3, TypeScript, standard-version</div>
+  <div class="meta">2024.06 ~ 현재 · 설계·배포·운영 전담 · Vue3, TypeScript, standard-version</div>
   <p class="desc">같은 전자문서 컴포넌트가 4개 프로젝트에 제각각 중복 구현되어, 문서 하나를 고치려면 레포 4곳을 따로 수정해야 했다. 이를 사내 첫 공통 NPM 패키지로 통합하자고 제안하고 설계·배포·운영까지 전담했다. 지금은 커스텀 계약서 18종이 이 패키지 위에서 관리된다.</p>
   <ul>
     <li>레포 4곳 개별 수정 → 패키지 버전 1회 배포로 전 프로젝트 동시 반영</li>
-    <li>beta 사전 검증 → 안정판 승격 2단계 배포 — 소비처 장애 0 · standard-version으로 버전·CHANGELOG 자동화</li>
+    <li>beta 사전 검증 → 안정판 승격 2단계 배포로 소비처 장애 0 · standard-version으로 버전·CHANGELOG 자동화</li>
     <li>중복 구현을 패키지로 분리·배포하는 체계를 사내에 처음 도입</li>
   </ul>
   <div class="figs">
@@ -153,8 +153,8 @@
 
 <div class="project page-break">
   <h3>가다 근로자앱·관리자앱 (웹뷰 콘텐츠)</h3>
-  <div class="meta">2023.10 — 현재 · 근로자앱 핵심 기여 / 관리자앱 공동 개발 · Vue3, Pinia, Tailwind</div>
-  <p class="desc">앱 내 웹 서비스(근로자앱 93·관리자앱 44개 화면) — 출역·이벤트 구좌·포인트몰·QR 안전교육 등 핵심 플로우 개발.</p>
+  <div class="meta">2023.10 ~ 현재 · 근로자앱 핵심 기여 / 관리자앱 공동 개발 · Vue3, Pinia, Tailwind</div>
+  <p class="desc">앱 내 웹 서비스(근로자앱 93·관리자앱 44개 화면). 출역·이벤트 구좌·포인트몰·QR 안전교육 등 핵심 플로우 개발.</p>
   <ul>
     <li>푸시·배너 → 목적지 직행 딥링크: 로그인·인증이 개입해도 가로채기→보류→이어처리로 목적지 보존</li>
     <li>홈 팝업 우선순위·조건 체계 정합화, 공통 풀팝업 통합 · 앱-웹 postMessage 인터페이스 짝 설계</li>
@@ -167,25 +167,25 @@
 
 <h2>More Projects</h2>
 <div class="grid2">
-  <div class="mini"><h4>가다오피스</h4><div class="meta">2024.04 — 현재 · 주도 개발</div>
-    <ul><li>노무 문서 9종 중 6종 — PDF/엑셀 다운로드 공통화(html2canvas+jsPDF+ZIP 암호화)</li><li>서버 미지원 일괄 다운로드를 프론트 전용으로 해결</li></ul></div>
-  <div class="mini"><h4>가다 핀페이</h4><div class="meta">2025.05 — 2026.06 · 기능 개발 참여</div>
+  <div class="mini"><h4>가다오피스</h4><div class="meta">2024.04 ~ 현재 · 주도 개발</div>
+    <ul><li>노무 문서 9종 중 6종 담당: PDF/엑셀 다운로드 공통화(html2canvas+jsPDF+ZIP 암호화)</li><li>서버 미지원 일괄 다운로드를 프론트 전용으로 해결</li></ul></div>
+  <div class="mini"><h4>가다 핀페이</h4><div class="meta">2025.05 ~ 2026.06 · 기능 개발 참여</div>
     <ul><li>임금 선지급·정산 핀테크 어드민 (React Native)</li><li>직접지급·은행별(전북·iM·하나) 분기, 이체 승인 플로우</li></ul></div>
-  <div class="mini"><h4>사내 알림 시스템</h4><div class="meta">2023.10 — 2026.07 · 주도 개발</div>
+  <div class="mini"><h4>사내 알림 시스템</h4><div class="meta">2023.10 ~ 2026.07 · 주도 개발</div>
     <ul><li>Push·SMS 공통 컴포넌트 + type 분기 통합</li><li>EUC-KR 차단·바이트 기반 SMS/MMS 전환·법정 문구 자동 처리</li></ul></div>
-  <div class="mini"><h4>WTrust 계약 관리</h4><div class="meta">2024.10 — 2026.07 · 공동 개발(최다 기여)</div>
+  <div class="mini"><h4>WTrust 계약 관리</h4><div class="meta">2024.10 ~ 2026.07 · 공동 개발(최다 기여)</div>
     <ul>
-<li>무로그인 외부 동의 페이지 — 상태별 분기·권한 제어</li></ul></div>
-  <div class="mini"><h4>Hello Factory</h4><div class="meta">2020.11 — 2023.05 · FE 100%</div>
-    <ul><li>헬로클릭(실시간 학생 피드백 시스템) — GraphQL Subscription 실시간, 통계·원격수업</li><li>통합 어드민 · 세팅앱(Flutter/BLE)</li></ul></div>
-  <div class="mini"><h4>HAII · O2Palm</h4><div class="meta">2019 — 2020</div>
+<li>무로그인 외부 동의 페이지: 상태별 분기·권한 제어</li></ul></div>
+  <div class="mini"><h4>Hello Factory</h4><div class="meta">2020.11 ~ 2023.05 · FE 100%</div>
+    <ul><li>헬로클릭(실시간 학생 피드백 시스템): GraphQL Subscription 실시간, 통계·원격수업</li><li>통합 어드민 · 세팅앱(Flutter/BLE)</li></ul></div>
+  <div class="mini"><h4>HAII · O2Palm</h4><div class="meta">2019 ~ 2020</div>
     <ul><li>호핑(Ionic 앱)·통합 어드민 FE 100%</li><li>Snowpalm 리뉴얼(40%)·Pic 웹·앱</li></ul></div>
 </div>
 
 <h2>Education · 기타</h2>
-<div class="row"><div class="k">2022.03 — 2026.02</div><div>숭실대학교 미디어경영학부 졸업</div></div>
-<div class="row"><div class="k">2016.03 — 2019.01</div><div>미림여자정보과학고등학교(정보과학) 졸업</div></div>
-<div class="row"><div class="k">오픈소스</div><div>channel_talk_flutter — setPreventDefaultUrlClick API 추가 PR 머지 (v4.1.0)</div></div>
+<div class="row"><div class="k">2022.03 ~ 2026.02</div><div>숭실대학교 미디어경영학부 졸업</div></div>
+<div class="row"><div class="k">2016.03 ~ 2019.01</div><div>미림여자정보과학고등학교(정보과학) 졸업</div></div>
+<div class="row"><div class="k">오픈소스</div><div>channel_talk_flutter에 setPreventDefaultUrlClick API 추가 PR 머지 (v4.1.0)</div></div>
 
 <footer>김혜진 (Heidi) · hyepago@gmail.com · github.com/hyejin-1010</footer>
 
