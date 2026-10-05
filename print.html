@@ -84,7 +84,7 @@
 <div class="project">
   <h3>가다 앱 — Flutter 유지보수 → React Native 전환</h3>
   <div class="meta">2023.11 — 현재 · RN 전환·초기 구조 단독 주도 → 이후 공동 개발</div>
-  <p class="desc">2년간 유지보수한 Flutter 앱의 구조적 한계(기술 부채·두 언어 병행·레포 분리)를 근거로 React Native 전환을 직접 제안, 구조 설계부터 배포 파이프라인까지 단독 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합.</p>
+  <p class="desc">2년간 유지보수한 Flutter 앱의 구조적 한계(기술 부채·두 언어 병행·레포 분리)를 근거로 React Native 전환을 직접 제안, 구조 설계부터 배포 파이프라인까지 단독 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합했다.</p>
   <ul>
     <li><b>네이티브 화면 OTA 배포 1~3일 → 4분 이내</b> — 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
     <li><b>앱 crash-free 사용자 99.96% / 세션 99.99%</b> 유지 — 크래시 급증 시 원인 규명(대량 푸시→메인 스레드 과부하)까지</li>
@@ -117,35 +117,31 @@
 <div class="project page-break">
   <h3>가다 백오피스</h3>
   <div class="meta">2023.10 — 현재 · 초기 설계·구축 단독 주도 → 이후 공동 개발 · Vue3, TypeScript, Vite</div>
-  <p class="desc">화면 100여 개(라우트 160개) 규모 어드민을 착수 시점부터 설계. 회사 첫 TypeScript 도입을 제안해 정착시켰고(이후 신규 프로젝트 기본 채택), 공통 컴포넌트 83종으로 UI 표준을 만들었다.</p>
+  <p class="desc">화면 100여 개(라우트 160개) 규모 어드민을 착수 시점부터 설계했다. 회사 첫 TypeScript 도입을 제안해 정착시켰고(이후 신규 프로젝트 기본 채택), 공통 컴포넌트 83종으로 UI 표준을 만들었다.</p>
   <ul>
     <li>상세 폼은 <b>배열 정의만으로 렌더링</b> — 새 메뉴 추가 시 폼 구현 비용 최소화</li>
     <li>공통 useList에 500ms debounce 한 곳 적용으로 전 목록 화면의 중복 호출 제거 + axios 캐시·함수 단위 import</li>
     <li>동일 columns 정의로 데스크탑 테이블 ↔ 모바일 카드뷰 자동 전환</li>
     <li>CustomInput 추상화 재판단 — 타입 30종 돌파 후 독립 컴포넌트 추출 방향으로 전환</li>
   </ul>
-  <div class="figs shots">
-    <figure><img src="images/backoffice-worker-list-desktop.png" alt="근로자 목록" /><figcaption>근로자 목록 (dev · 개인정보 블러)</figcaption></figure>
-    <figure><img src="images/backoffice-worker-detail.png" alt="상세 폼" /><figcaption>상세 — 배열 정의로 렌더되는 편집 폼</figcaption></figure>
-  </div>
 </div>
 
 <div class="project">
   <h3>사내 ERP (HR·근태·휴가·전자결재) — 자기주도 사이드</h3>
   <div class="meta">2026.06 — 현재 · 기획·설계·구현·배포 단독 (근무 외) · TS 풀스택 모노레포, Docker</div>
-  <p class="desc">외부 그룹웨어를 대체하는 사내 ERP를 근무 외 시간에 혼자, 기획부터 배포까지 끌고 간 자기주도 프로젝트. api+web 모노레포(화면 38) · 자체 인증 · Docker+CI. 구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접.</p>
+  <p class="desc">외부 그룹웨어를 대체하는 사내 ERP를 근무 외 시간에 혼자, 기획부터 배포까지 끌고 간 자기주도 프로젝트. api+web 모노레포(화면 38) · 자체 인증 · Docker+CI. 구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접 내렸다.</p>
 </div>
 
 <div class="project">
   <h3>사내 개발 실험실 플랫폼 (dev-labs)</h3>
   <div class="meta">2026.08 — 현재 · 발제·기획·구축 단독 · FastAPI, Vue3, Docker, Traefik</div>
-  <p class="desc">실험 기능을 빠르게 붙였다 뗄 수 있는 멀티 프로젝트 플랫폼을 직접 발제·구축. 배포 콘솔(CLI→웹 UI) · 에러 수집 대시보드 · 근로자 행동 히트맵 · 봇 작업 실시간 대시보드를 운영.</p>
+  <p class="desc">실험 기능을 빠르게 붙였다 뗄 수 있는 멀티 프로젝트 플랫폼을 직접 발제·구축. 배포 콘솔(CLI→웹 UI) · 에러 수집 대시보드 · 근로자 행동 히트맵 · 봇 작업 실시간 대시보드를 운영한다.</p>
 </div>
 
 <div class="project">
   <h3>사내 전자문서 NPM 패키지</h3>
   <div class="meta">2024.06 — 현재 · 설계·배포·운영 전담 · Vue3, TypeScript, standard-version</div>
-  <p class="desc">4개 프로젝트에 중복 구현되던 전자문서 컴포넌트를 사내 첫 공통 패키지로 통합 제안·구축. 커스텀 계약서 18종, 312회 버전 배포. beta 검증 → 안정판 승격 파이프라인으로 소비처 장애 예방.</p>
+  <p class="desc">4개 프로젝트에 중복 구현되던 전자문서 컴포넌트를 사내 첫 공통 패키지로 통합 제안·구축했다. 커스텀 계약서 18종, 312회 버전 배포. beta 검증 → 안정판 승격 파이프라인으로 소비처 장애를 예방했다.</p>
   <div class="figs">
     <figure><img src="images/gada-document-component-structure.svg" alt="패키지 구조" /><figcaption>4개 프로젝트가 소비하는 공통 패키지 구조</figcaption></figure>
   </div>

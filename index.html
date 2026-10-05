@@ -97,6 +97,9 @@
   figcaption { text-align: center; color: var(--sub); font-size: 0.8rem; margin-top: 10px; }
   .shots { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
   .shots img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; cursor: zoom-in; }
+  .shots.bo { grid-template-columns: 2fr 1fr; grid-template-rows: 155px 155px; }
+  .shots.bo img { height: 100%; object-fit: cover; object-position: top; }
+  .shots.bo .tall { grid-column: 2; grid-row: 1 / 3; }
   .shot-todo { border: 1.5px dashed #d6dce4; border-radius: 12px; min-height: 120px; display: flex; align-items: center; justify-content: center; color: #aab3bd; font-size: 0.82rem; text-align: center; padding: 16px; }
 
   /* Mini cards */
@@ -210,7 +213,7 @@
     <div class="meta"><span><b>2023.11 — 현재</b></span><span>RN 전환·초기 구조 단독 주도 → 이후 공동 개발</span></div>
     <p class="desc">
       2년간 유지보수하던 Flutter 앱의 구조적 한계(기술 부채·두 언어 병행·레포 분리)를 근거로 React Native 전환을 직접 제안했고,
-      기본 구조 설계부터 배포 파이프라인까지 처음부터 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합.
+      기본 구조 설계부터 배포 파이프라인까지 처음부터 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합했다.
     </p>
     <ul>
       <li><strong>네이티브 화면 OTA 배포 1~3일 → 4분 이내</strong> — Hot Updater 도입으로 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
@@ -223,7 +226,6 @@
     <div class="shots">
       <img class="thumb" src="images/worker-home.png" alt="근로자앱 홈" />
       <img class="thumb" src="images/manager-home.png" alt="관리자앱 홈" />
-      <div class="shot-todo">📸 Crashlytics crash-free 99.96%<br/>(프로젝트명 가리고 캡처)</div>
     </div>
     <details class="deep"><summary>왜 전환했고, 무엇을 지켰나</summary>
       <p><strong>전환 판단.</strong> 외주로 시작돼 누적된 기술 부채, 프론트 2명이 Dart·TS 두 언어를 병행하는 부담, 두 앱이 레포로 분리돼 생기는 이중 유지보수 — 이 셋을 근거로 수정 비용이 재구축 비용을 넘었다고 판단해 RN 전환을 제안했다. RN을 고른 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다.</p>
@@ -247,7 +249,7 @@
     <div class="meta"><span><b>2024.06 — 현재</b></span><span>단독 설계·구축·운영</span></div>
     <p class="desc">
       프론트 2명 팀의 반복 작업(이슈 처리·배포 상태 관리·크래시 트리아지·정형 문서 생성)을
-      AI 에이전트를 오케스트레이션하는 자동화 시스템으로 옮겼다. 이슈·배포·문서·리포트 등 자동화 10여 종을 상시 구동하고, 이를 감시하는 워치독 4종을 별도로 두어 단독 운영.
+      AI 에이전트를 오케스트레이션하는 자동화 시스템으로 옮겼다. 이슈·배포·문서·리포트 등 자동화 10여 종을 상시 구동하고, 이를 감시하는 워치독 4종을 별도로 두어 단독 운영한다.
     </p>
     <ul>
       <li><strong>이슈 → PR → 배포 루프 무인화</strong> — 크래시 자동 이슈화 → AI 코드작업·PR 생성 → 사람은 리뷰·머지만 → 배포 상태 자동 전이</li>
@@ -268,7 +270,7 @@
     <h3>가다 백오피스</h3>
     <div class="meta"><span><b>2023.10 — 현재</b></span><span>초기 설계·구축 단독 주도 → 이후 공동 개발</span></div>
     <p class="desc">
-      화면 100여 개(라우트 160개) 규모 어드민을 착수 시점부터 설계. 회사 첫 TypeScript 도입을 제안해 정착시켰고
+      화면 100여 개(라우트 160개) 규모 어드민을 착수 시점부터 설계했다. 회사 첫 TypeScript 도입을 제안해 정착시켰고
       (이후 신규 프로젝트 기본 채택), 공통 컴포넌트 83개로 UI 표준을 만들었다.
     </p>
     <ul>
@@ -283,20 +285,15 @@
       <p><strong>추상화는 규모에 따라 재판단.</strong> 모든 입력 타입을 담던 단일 CustomInput이 타입 30개를 넘기며 1,000줄을 초과하고 readonly/disabled 개념이 섞였다. 2025.06 두 개념을 분리했고, 이후 본체를 키우는 대신 분리 가능한 타입을 독립 컴포넌트로 추출하는 방향으로 전환했다.</p>
       <p><strong>성능은 공통 레이어에서.</strong> 전 목록 화면의 기반인 useList에 500ms debounce를 한 번 넣어 중복 호출을 전역에서 제거 — 공통 추상화가 유지보수에 실제로 기여한 사례.</p>
     </details>
-    <div class="shots">
-      <img class="thumb" src="images/backoffice-worker-list-desktop.png" alt="근로자 목록 (데스크탑)" />
-      <img class="thumb" src="images/backoffice-worker-detail.png" alt="근로자 상세 폼" />
-      <img class="thumb" src="images/backoffice-worker-list-mobile.png" alt="같은 화면 모바일 카드뷰" />
-    </div>
   </article>
 
   <article class="project">
     <h3>사내 ERP (HR·근태·휴가·전자결재)</h3>
     <div class="meta"><span><b>2026.06 — 현재</b></span><span>기획·설계·구현·배포 단독 (근무 외 자기주도 사이드)</span></div>
     <p class="desc">
-      외부 그룹웨어를 대체하는 사내 ERP를 근무 외 시간에 혼자, 기획부터 배포까지 끌고 간 자기주도 프로젝트.
+      외부 그룹웨어를 대체하는 사내 ERP를 근무 외 시간에 혼자, 기획부터 배포까지 끌고 간 자기주도 프로젝트다.
       TypeScript 풀스택 모노레포(api+web, 화면 약 38개) · 자체 인증 · Docker+CI.
-      구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접.
+      구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접 내렸다.
     </p>
     <div class="stack"><span>TypeScript</span><span>pnpm · Turborepo</span><span>Docker</span><span>Playwright E2E</span></div>
   </article>
@@ -306,7 +303,7 @@
     <div class="meta"><span><b>2026.08 — 현재</b></span><span>기획·구축 단독</span></div>
     <p class="desc">
       실험 기능을 빠르게 붙였다 뗄 수 있는 멀티 프로젝트 플랫폼을 직접 발제·구축.
-      배포 콘솔(CLI → 웹 UI) · 에러 수집 대시보드 · 근로자 행동 히트맵 · 봇 작업 실시간 대시보드를 이 위에서 운영.
+      배포 콘솔(CLI → 웹 UI) · 에러 수집 대시보드 · 근로자 행동 히트맵 · 봇 작업 실시간 대시보드를 이 위에서 운영한다.
     </p>
     <div class="stack"><span>FastAPI</span><span>Vue 3</span><span>Docker</span><span>Traefik</span></div>
   </article>
@@ -315,8 +312,8 @@
     <h3>사내 전자문서 NPM 패키지</h3>
     <div class="meta"><span><b>2024.06 — 현재</b></span><span>설계·주도·운영 전담</span></div>
     <p class="desc">
-      4개 프로젝트에 중복 구현되던 전자문서 컴포넌트를 사내 첫 공통 패키지로 통합 제안·구축.
-      커스텀 계약서 18종, 312회 버전 배포. beta 태그 사전 검증 → 안정판 승격 파이프라인으로 소비처 장애 예방.
+      4개 프로젝트에 중복 구현되던 전자문서 컴포넌트를 사내 첫 공통 패키지로 통합 제안·구축했다.
+      커스텀 계약서 18종, 312회 버전 배포. beta 태그 사전 검증 → 안정판 승격 파이프라인으로 소비처 장애를 예방했다.
     </p>
     <div class="stack"><span>Vue 3</span><span>TypeScript</span><span>standard-version</span><span>npm</span></div>
     <details class="deep"><summary>패키지 구조도</summary>
