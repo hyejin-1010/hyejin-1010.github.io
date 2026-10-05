@@ -321,9 +321,16 @@
     <h3>사내 전자문서 NPM 패키지</h3>
     <div class="meta"><span><b>2024.06 — 현재</b></span><span>설계·주도·운영 전담</span></div>
     <p class="desc">
-      4개 프로젝트에 중복 구현되던 전자문서 컴포넌트를 사내 첫 공통 패키지로 통합 제안·구축했다.
-      커스텀 계약서 18종을 관리하며 312회 버전을 배포했다. beta 태그 사전 검증 → 안정판 승격 파이프라인으로 소비처 장애를 예방했다.
+      같은 전자문서 컴포넌트가 4개 프로젝트에 제각각 중복 구현되어, 문서 하나를 고치려면 레포 4곳을 따로 수정해야 했다.
+      이를 사내 첫 공통 NPM 패키지로 통합하자고 제안하고, 설계·배포·운영까지 전담했다.
+      지금은 커스텀 계약서 18종이 이 패키지 위에서 관리되고, 312회 버전 배포로 지속 운영 중이다.
     </p>
+    <ul>
+      <li><strong>수정 1회 → 전 프로젝트 반영</strong> — 레포 4곳을 따로 고치던 문서 수정이 패키지 버전 1회 배포로 동시 반영되는 구조</li>
+      <li><strong>안전한 배포 파이프라인</strong> — beta 태그로 사전 검증한 뒤 안정판으로 승격하는 2단계 배포. 312회 배포 동안 패키지 업데이트로 인한 소비처 장애 0</li>
+      <li><strong>버전·변경 이력 자동화</strong> — standard-version 기반으로 버전과 CHANGELOG가 커밋에서 자동 생성</li>
+      <li><strong>사내 첫 공통 패키지 문화</strong> — 중복 구현을 패키지로 분리·배포하는 체계를 사내에 처음 도입</li>
+    </ul>
     <div class="stack"><span>Vue 3</span><span>TypeScript</span><span>standard-version</span><span>npm</span></div>
     <details class="deep"><summary>패키지 구조도</summary>
       <figure class="figure">
