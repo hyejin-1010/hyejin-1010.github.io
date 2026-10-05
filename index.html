@@ -223,10 +223,6 @@
       <li>오픈소스 기여: channel_talk_flutter에 API 추가 PR 머지 (v4.1.0)</li>
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
-    <div class="shots">
-      <img class="thumb" src="images/worker-home.png" alt="근로자앱 홈" />
-      <img class="thumb" src="images/manager-home.png" alt="관리자앱 홈" />
-    </div>
     <details class="deep"><summary>왜 전환했고, 무엇을 지켰나</summary>
       <p><strong>전환 판단.</strong> 외주로 시작돼 누적된 기술 부채, 프론트 2명이 Dart·TS 두 언어를 병행하는 부담, 두 앱이 레포로 분리돼 생기는 이중 유지보수 — 이 셋을 근거로 수정 비용이 재구축 비용을 넘었다고 판단해 RN 전환을 제안했다. RN을 고른 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다.</p>
       <p><strong>지킨 것.</strong> 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로, 기존 기능·UX를 1:1 재현하는 데 초기 설계·검증 시간을 집중 투자했다.</p>
@@ -282,6 +278,27 @@
       <p><strong>추상화는 규모에 따라 재판단.</strong> 모든 입력 타입을 담던 단일 CustomInput이 타입 30개를 넘기며 1,000줄을 초과하고 readonly/disabled 개념이 섞였다. 2025.06 두 개념을 분리했고, 이후 본체를 키우는 대신 분리 가능한 타입을 독립 컴포넌트로 추출하는 방향으로 전환했다.</p>
       <p><strong>성능은 공통 레이어에서.</strong> 전 목록 화면의 기반인 useList에 500ms debounce를 한 번 넣어 중복 호출을 전역에서 제거했다 — 공통 추상화가 유지보수에 실제로 기여한 사례다.</p>
     </details>
+  </article>
+
+  <article class="project">
+    <h3>가다 근로자앱·관리자앱 웹 (WebView 콘텐츠)</h3>
+    <div class="meta"><span><b>2023.10 — 현재</b></span><span>근로자앱 핵심 기여 · 관리자앱 공동 개발</span></div>
+    <p class="desc">
+      앱 화면 대부분을 구성하는 WebView 웹 서비스다 — 근로자앱 93개·관리자앱 44개 화면.
+      출역 지원·확인, 홈 팝업/배너/이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우와
+      건강검진서 등록·간편인증 연동 같은 민감정보 플로우를 개발했다.
+    </p>
+    <ul>
+      <li><strong>끊기지 않는 딥링크</strong> — 푸시·배너로 들어온 사용자가 로그인·네이티브 간편인증을 거쳐도 목적지가 보존되는 흐름 설계(가로채기 → 보류 → 이어처리, 홈 우회 없는 복귀)</li>
+      <li><strong>간편인증 중 앱 종료 복구</strong> — 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 등록이 실패하던 문제를, 진행 상태 저장 + 재진입 이어하기로 해결·배포</li>
+      <li><strong>홈 팝업 체계 정합화</strong> — 성격이 다른 팝업들의 노출 우선순위·조건을 정리하고 공통 풀팝업으로 통합. 신규 팝업이 체계에 얹히는 구조로 정착</li>
+      <li>앱-웹 postMessage 인터페이스(인증·업데이트 게이트·공유)를 네이티브와 짝으로 설계</li>
+    </ul>
+    <div class="stack"><span>Vue 3</span><span>TypeScript</span><span>Vite</span><span>Pinia</span></div>
+    <div class="shots">
+      <img class="thumb" src="images/worker-home.png" alt="근로자앱 홈" />
+      <img class="thumb" src="images/manager-home.png" alt="관리자앱 홈" />
+    </div>
   </article>
 
   <article class="project">
@@ -371,13 +388,6 @@
         <li>CommonTable·Filter·Sidebar 공통 구조 초기 설계</li>
         <li>전체선택-일부해제(allSelectMode)를 unselected 추적으로 구현</li>
         <li>무로그인 외부 동의 페이지 — 링크 상태별 분기, 권한별 메뉴 제어</li>
-      </ul>
-    </div>
-    <div class="mini"><h4>가다 근로자앱·관리자앱 (웹)</h4><div class="meta">2023.10 — 현재</div><p>앱 WebView 콘텐츠인 Vue3 웹앱.</p>
-      <ul>
-        <li>출역 지원·공수 관리·현장 안내 등 핵심 플로우 (화면 93·44개)</li>
-        <li>딥링크 보존·간편인증 이어하기 등 웹-네이티브 경계 설계</li>
-        <li>앱-웹 postMessage 연동 (업데이트 게이트 등)</li>
       </ul>
     </div>
     <div class="mini"><h4>가다 홈페이지</h4><div class="meta">2024.09 — 2026.06</div><p>Nuxt 3(SSR) 서비스 소개 사이트 개발 참여.</p></div>
