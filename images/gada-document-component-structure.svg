@@ -16,7 +16,7 @@
   <text x="294" y="76" font-size="9.5" font-weight="700" fill="#111" text-anchor="middle">표준 문서</text>
   <text x="294" y="89" font-size="9" fill="#4b5563" text-anchor="middle">근로계약서 · 작업확인서 · 임금명세서 등</text>
   <text x="466" y="76" font-size="9.5" font-weight="700" fill="#111" text-anchor="middle">건설사별 커스텀 계약서</text>
-  <text x="466" y="89" font-size="9" fill="#4b5563" text-anchor="middle">18종 운영</text>
+  <text x="466" y="89" font-size="9" fill="#4b5563" text-anchor="middle">건설사별 맞춤 양식</text>
 
   <!-- 배포 라인 -->
   <g stroke="#2563eb" stroke-width="1.4" fill="none">
@@ -50,5 +50,5 @@
     <text x="660" y="190" font-size="10" fill="#4b5563">현장관리자 웹뷰</text>
   </g>
 
-  <text x="380" y="236" font-size="9.5" fill="#6b7280" text-anchor="middle">양식 변경 · 커스텀 계약서 추가 · 버그 수정을 패키지 한 곳에서 관리 · 레포 4곳 개별 수정 제거</text>
+  <text x="380" y="236" font-size="9.5" fill="#6b7280" text-anchor="middle">양식 변경 · 커스텀 계약서 추가 · 버그 수정을 패키지 한 곳에서 관리 · 레포별 개별 수정 제거</text>
 </svg>

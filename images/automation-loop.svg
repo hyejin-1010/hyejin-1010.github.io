@@ -40,7 +40,7 @@
 
   <!-- 워치독 -->
   <rect x="14" y="200" width="636" height="38" rx="8" fill="#f9fafb" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="24" y="223" font-weight="700" fill="#374151">워치독 4종</text>
+  <text x="24" y="223" font-weight="700" fill="#374151">워치독</text>
   <text x="104" y="223" font-size="10.5" fill="#4b5563">파이프라인 실패 · 봇 연결 끊김 · 수집 키 오염 · 토큰 만료 → 침묵 실패 감지 시 경보 · 자동 복구</text>
   <g stroke="#9ca3af" stroke-width="1" fill="none" stroke-dasharray="3 3" marker-end="url(#g)">
     <path d="M261 200 L261 98"/>
