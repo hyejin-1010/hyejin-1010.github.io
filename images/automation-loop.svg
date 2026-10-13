@@ -35,7 +35,7 @@
     <path d="M600 96 L600 157 L568 157"/>
     <path d="M378 157 L79 157 L79 96"/>
   </g>
-  <text x="330" y="112" font-size="9.5" fill="#1d4ed8" text-anchor="middle">리뷰·렌더 검증 게이트 통과 시에만 반영</text>
+  <text x="330" y="112" font-size="9.5" fill="#1d4ed8" text-anchor="middle">사람 리뷰 통과 시에만 반영</text>
   <text x="170" y="150" font-size="9.5" fill="#6b7280" text-anchor="middle">배포 반영 확인 → 이슈 닫힘</text>
 
   <!-- 워치독 -->
@@ -50,10 +50,10 @@
   <!-- 범위 주석 -->
   <g>
     <rect x="672" y="40" width="80" height="140" rx="8" fill="#fff" stroke="#e5e7eb"/>
-    <text x="712" y="62" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">적용 범위</text>
-    <text x="712" y="82" font-size="9.5" fill="#4b5563" text-anchor="middle">크래시 대응</text>
-    <text x="712" y="98" font-size="9.5" fill="#4b5563" text-anchor="middle">보조 서비스</text>
-    <text x="712" y="114" font-size="9.5" fill="#4b5563" text-anchor="middle">정형 문서 생성</text>
+    <text x="712" y="62" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">루프 적용 범위</text>
+    <text x="712" y="82" font-size="9.5" fill="#4b5563" text-anchor="middle">프로덕션 크래시</text>
+    <text x="712" y="98" font-size="9.5" fill="#4b5563" text-anchor="middle">이슈 시트 작업</text>
+    <text x="712" y="114" font-size="9.5" fill="#4b5563" text-anchor="middle">(보조 서비스)</text>
     <text x="712" y="140" font-size="9" fill="#9ca3af" text-anchor="middle">핵심 제품 코드는</text>
     <text x="712" y="154" font-size="9" fill="#9ca3af" text-anchor="middle">제외</text>
   </g>
