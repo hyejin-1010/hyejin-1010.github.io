@@ -320,7 +320,7 @@
 
   <article class="project">
     <h3>사내 ERP (HR · 근태 · 휴가 · 전자결재)</h3>
-    <div class="meta"><span><b>2026.06 ~ 현재</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 사이드)</span></div>
+    <div class="meta"><span><b>2026.08 ~ 현재</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 사이드)</span></div>
     <p class="desc">
       회사에 그룹웨어 구독 같은 고정 지출을 줄이려는 니즈가 있어 직접 풀기로 하였습니다. 근무 외 시간에
       기존 ERP(하이웍스) 분석부터 기획 · 개발 · 배포까지 전 과정을 혼자 진행한 자기주도 프로젝트입니다.
@@ -333,6 +333,7 @@
     </ul>
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>pnpm · Turborepo</span><span>Prisma · MySQL</span><span>Docker</span><span>Playwright E2E</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
+      <p><strong>처음부터 다시.</strong> 동료가 6월에 시작한 초기 버전을 폐기하고, 8월 말에 범위와 구조를 다시 잡아 처음부터 구축해 한 달 만에 출시하였습니다.</p>
       <p><strong>그룹웨어 전체가 아니라 실사용 4개만.</strong> 기존 그룹웨어 기능을 분석해 보니 실제로 쓰는 건 HR · 근태 · 휴가 · 전자결재였습니다. 메일 · 메신저는 범위 밖으로 못 박아, 혼자 끝낼 수 있는 크기로 잘랐습니다.</p>
       <p><strong>AI는 구현 가속, 설계는 직접.</strong> 아키텍처 · 데이터 모델 · 인증 · 배포는 직접 결정하고 코드 작성은 AI 페어로 진행하였습니다. 전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중입니다.</p>
       <figure class="figure">
