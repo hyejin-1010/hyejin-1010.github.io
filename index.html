@@ -168,7 +168,7 @@
     <h1>김혜진<span>Heidi</span></h1>
     <div class="role">프로덕트 엔지니어 (Frontend) · 웹/앱 + 개발 생산성</div>
     <p class="lead">
-      웹(Vue 3 · Next.js)과 앱(React Native)의 설계부터 배포까지 담당하였으며, 팀이 반복하던 일을 AI 에이전트 자동화로 전환해 온 7년차 프론트엔드 엔지니어입니다.
+      웹(Vue 3 · Next.js)과 앱(React Native)의 설계부터 배포까지 담당하였으며, 팀이 반복하던 일을 AI 에이전트 자동화로 전환해 온 7년차 프로덕트 엔지니어입니다.
       건설 일용직 HR 플랫폼 '가다'에서 백오피스 초기 설계와 모바일 앱의 React Native 전환을 주도하였고,
       사내 ERP를 혼자 기획 · 구축해 한 달 만에 출시하였습니다.
       개발 자동화 10여 종을 단독 운영하며, 2026년 8월부터 기획 · 프론트 · 백엔드로 이루어진 3인 파트의 파트장을 맡고 있습니다.
@@ -200,7 +200,7 @@
 <section id="skills">
   <span class="sec-cap">Skills</span>
   <h2>기술</h2>
-  <p class="sec-desc">주력은 Vue 3 · TypeScript, 앱은 React Native. ERP는 Next.js · NestJS 풀스택으로 직접 만들었고, 배포 · 테스트 · 자동화까지 다룹니다.</p>
+  <p class="sec-desc">주력은 Vue 3 · TypeScript이고, 앱은 React Native입니다. ERP는 Next.js · NestJS 풀스택으로 직접 만들었고, 배포 · 테스트 · 자동화까지 다룹니다.</p>
   <div class="skills">
     <div class="skill-group"><h3>WEB FRONT-END</h3>
       <div class="chips"><span class="chip">Vue 3</span><span class="chip">Nuxt 3 (SSR)</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Pinia</span><span class="chip">Tailwind</span><span class="chip">PrimeVue</span><span class="chip">Next.js (App Router)</span><span class="chip">React 19</span></div>
@@ -209,7 +209,7 @@
       <div class="chips"><span class="chip">React Native</span><span class="chip">TanStack Query</span><span class="chip">Zustand</span><span class="chip">NativeWind</span><span class="chip">Flutter</span></div>
     </div>
     <div class="skill-group"><h3>개발 생산성 · 인프라</h3>
-      <div class="chips"><span class="chip">Fastlane</span><span class="chip">Bitbucket Pipelines</span><span class="chip">OTA (Hot Updater)</span><span class="chip">Docker · Traefik</span><span class="chip">Jest (단위)</span><span class="chip">Playwright · Maestro (E2E)</span><span class="chip">Claude Code 에이전트 오케스트레이션</span></div>
+      <div class="chips"><span class="chip">Fastlane</span><span class="chip">Bitbucket Pipelines</span><span class="chip">OTA (Hot Updater)</span><span class="chip">Docker · Traefik</span><span class="chip">Jest</span><span class="chip">Playwright · Maestro</span><span class="chip">Claude Code 에이전트 오케스트레이션</span></div>
     </div>
     <div class="skill-group"><h3>BACKEND (확장 중)</h3>
       <div class="chips"><span class="chip">NestJS · Prisma · MySQL</span><span class="chip">FastAPI · Python</span><span class="chip">Laravel · PHP</span></div>
@@ -233,16 +233,16 @@
     <ul>
       <li><strong>네이티브 화면 OTA 배포 1~3일 → 4분 이내</strong>: Hot Updater 도입으로 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
       <li><strong>앱 crash-free 사용자 99.96% / 세션 99.99%</strong> 유지</li>
-      <li>Fastlane + Pipelines 배포 자동화, <strong>iOS · Android 병렬 빌드로 40분 → 20분</strong>: 트리거 후 개발자가 기다릴 필요 없음</li>
+      <li>Fastlane + Bitbucket Pipelines 배포 자동화, <strong>iOS · Android 병렬 빌드로 40분 → 20분</strong>: 트리거 후 개발자가 기다릴 필요 없음</li>
       <li>OTA 번들 업데이트(JS 재시작)에도 딥링크가 유실되지 않는 보존 설계</li>
       <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태 저장 + 재진입 이어하기로 해결 · 배포</li>
-      <li>오픈소스 기여: channel_talk_flutter에 API 추가 PR 머지 (v4.1.0)</li>
+      <li>오픈소스 기여: ChannelTalk Flutter SDK에 API 추가 PR 머지 (v4.1.0)</li>
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
     <details class="deep"><summary>왜 전환하였고, 무엇을 지켰나</summary>
       <p><strong>전환 판단.</strong> 외주로 시작돼 누적된 기술 부채, 프론트 2명이 Dart · TS 두 언어를 병행하는 부담, 두 앱이 레포로 분리돼 생기는 이중 유지보수까지, 이 셋을 근거로 수정 비용이 재구축 비용을 넘었다고 판단해 RN 전환을 제안하였습니다. RN을 고른 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었습니다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일하였습니다.</p>
       <p><strong>지킨 것.</strong> 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로, 기존 기능 · UX를 1:1 재현하는 데 초기 설계 · 검증 시간을 집중 투자하였습니다.</p>
-      <p><strong>OTA 리스크 관리.</strong> 잘못된 업데이트가 전체 사용자에게 즉시 적용되는 위험이 있어, 도구 선정 단계에서 롤백 지원을 필수 기준으로 두고 Hot Updater를 선택 · 복구 절차를 검증하였습니다.</p>
+      <p><strong>OTA 리스크 관리.</strong> 잘못된 업데이트가 전체 사용자에게 즉시 적용되는 위험이 있어, 도구 선정 단계에서 롤백 지원을 필수 기준으로 두고 Hot Updater를 선택하고 복구 절차를 검증하였습니다.</p>
       <figure class="figure">
         <a href="images/gada-mobile-hub-monorepo.svg"><img src="images/gada-mobile-hub-monorepo.svg" alt="모노레포 구조" /></a>
         <figcaption>모노레포 구조 (클릭하면 크게)</figcaption>
@@ -272,7 +272,7 @@
     <details class="deep"><summary>설계 원칙과 안전장치</summary>
       <p><strong>사람은 판단에만.</strong> 크래시 수집 → 이슈 등록 → 코드 작업 → PR 생성 → 배포 상태 전이까지 자동으로 돌되, 리뷰 · 머지라는 판단 지점은 반드시 사람이 잡습니다. AI가 만든 결과물은 게이트(리뷰, 렌더 검증)를 통과해야만 반영됩니다.</p>
       <p><strong>자동화를 감시하는 자동화.</strong> 가장 위험한 건 조용히 멈추는 것입니다. 파이프라인 실패 · 봇 연결 끊김 · 수집 키 오염 · 토큰 만료를 각각 감시하는 워치독 4종을 두고, 감지 시 경보 또는 자동 복구합니다.</p>
-      <p><strong>문서 생성.</strong> 회사별 양식이 제각각인 계약서류를 엑셀 한 장으로 받아 커스텀 컴포넌트를 생성합니다. 병렬 생성은 격리 워크스페이스로 충돌을 막고, PDF · xlsx 산출물이 기준 크기를 넘지 못하면 커밋 자체를 차단합니다.</p>
+      <p><strong>문서 생성.</strong> 회사별 양식이 제각각인 계약서류를 엑셀 한 장으로 받아 커스텀 컴포넌트를 생성합니다. 병렬 생성은 격리 워크스페이스로 충돌을 막고, PDF · xlsx 산출물이 기준 크기에 못 미치면(렌더 실패 의심) 커밋을 차단합니다.</p>
       <figure class="figure">
         <a href="images/automation-loop.svg"><img src="images/automation-loop.svg" alt="이슈 → PR → 배포 루프와 워치독" /></a>
         <figcaption>이슈 → 에이전트 PR → 사람 리뷰 → 배포 → 상태 전이 루프. 워치독 4종이 루프 자체를 감시 (클릭하면 크게)</figcaption>
@@ -285,8 +285,8 @@
     <h3>가다 백오피스</h3>
     <div class="meta"><span><b>2023.10 ~ 현재</b></span><span>초기 설계 · 구축 단독 주도 → 이후 공동 개발</span></div>
     <p class="desc">
-      화면 약 100개 규모 어드민을 착수 시점부터 설계하였습니다. 회사 첫 TypeScript 도입을 제안해 정착시켰고
-      (이후 신규 프로젝트 기본 채택), CommonTable · CustomInput 등 핵심 공통 컴포넌트를 직접 만들어 공통화 기준을 세웠고, 이후 팀의 화면들이 이 체계 위에서 만들어지는 표준이 되었습니다.
+      화면 약 100개 규모 어드민을 착수 시점부터 설계하였습니다. 회사 첫 TypeScript 도입을 제안해 정착시켰고, 이후 신규 프로젝트가 TypeScript를 기본으로 채택하였습니다.
+      CommonTable · CustomInput 등 핵심 공통 컴포넌트를 직접 만들어 공통화 기준을 세웠고, 팀의 화면들이 이 체계 위에서 만들어지는 표준이 되었습니다.
     </p>
     <ul>
       <li>상세 폼은 <strong>필드 배열만 정의하면 자동 렌더링</strong>되는 구조라, 새 메뉴 추가 시 폼 구현 비용 최소화</li>
@@ -322,14 +322,14 @@
     <h3>사내 ERP (HR · 근태 · 휴가 · 전자결재)</h3>
     <div class="meta"><span><b>2026.06 ~ 현재</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 사이드)</span></div>
     <p class="desc">
-      회사가 그룹웨어 구독 같은 고정 지출을 줄이고 싶어 하여, 이를 직접 풀기로 하였습니다. 근무 외 시간에
+      회사에 그룹웨어 구독 같은 고정 지출을 줄이려는 니즈가 있어 직접 풀기로 하였습니다. 근무 외 시간에
       기존 ERP(하이웍스) 분석부터 기획 · 개발 · 배포까지 전 과정을 혼자 진행한 자기주도 프로젝트입니다.
-      동시에 "AI를 끝까지 활용하면 1인 딜리버리가 어디까지 가능한가"를 실험하는 프로젝트이기도 하였습니다.
+      동시에 "AI를 끝까지 활용하면 1인 딜리버리가 어디까지 가능한가"의 실험이기도 하였습니다.
     </p>
     <ul>
       <li><strong>연 1,200만 원 규모의 그룹웨어 구독을 자체 ERP로 대체</strong>: 기존 그룹웨어 기능 분석 → HR · 근태 · 휴가 · 전자결재로 범위 정의, 기존 데이터 마이그레이션 포함 <strong>한 달 만에 출시해 현재 사내 실사용 중</strong></li>
       <li>web(Next.js App Router) + api(NestJS REST · Prisma · MySQL) + shared 타입의 TypeScript 모노레포. 자체 인증 · Slack 연동 · DB 백업 · Docker 배포 · CI까지 운영 전반을 직접 담당</li>
-      <li>구현은 AI 페어프로그래밍(바이브 코딩)으로 가속하되, 아키텍처 · 인증 · 배포 등 핵심 설계 결정은 직접 내렸습니다</li>
+      <li>구현은 AI 페어프로그래밍(바이브 코딩)으로 가속하되, 아키텍처 · 인증 · 배포 등 핵심 설계 결정은 직접 수행</li>
     </ul>
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>pnpm · Turborepo</span><span>Prisma · MySQL</span><span>Docker</span><span>Playwright E2E</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
@@ -344,14 +344,14 @@
 
   <article class="project">
     <h3>사내 개발 실험실 플랫폼 (dev-labs)</h3>
-    <div class="meta"><span><b>2026.08 ~ 현재</b></span><span>기획 · 구축 단독</span></div>
+    <div class="meta"><span><b>2026.08 ~ 현재</b></span><span>발제 · 기획 · 구축 단독</span></div>
     <p class="desc">
       누가 시켜서가 아니라 "이런 도구가 있으면 좋겠다" 싶은 것들을 직접 만들어 올리는 사내 실험실 플랫폼입니다.
-      하나의 게이트웨이(Traefik) 뒤에 도구별 스택을 독립 컨테이너로 붙였습니다 뗄 수 있게 설계해 새 도구를 부담 없이 실험하고, 검증된 것은 남깁니다.
+      하나의 게이트웨이(Traefik) 뒤에 도구별 스택을 독립 컨테이너로 붙였다 뗄 수 있게 설계해 새 도구를 부담 없이 실험하고, 검증된 것은 남깁니다.
       개발 · 운영은 혼자, 사용자는 팀 전체입니다. 필요해서 시작한 도구들이 지금은 팀의 일상 도구가 되었습니다.
     </p>
     <ul>
-      <li><strong>배포 콘솔</strong>: 백엔드 배포 뒤 프론트를 내보낼 때 빌드까지 돌리면 그 사이 텀이 길었습니다. 빌드와 배포를 분리해 미리 빌드해 둔 결과물을 웹에서 골라 즉시 배포하고 이전 빌드로 롤백할 수 있게 하였습니다. 백엔드 · 프론트 배포 간격이 줄고, 배포 진입장벽이 사라져 누구나 배포할 수 있습니다</li>
+      <li><strong>배포 콘솔</strong>: 백엔드 배포 뒤 프론트를 배포할 때 빌드까지 돌리면 대기 시간이 길던 문제를 빌드 · 배포 분리로 해소. 미리 빌드한 결과물을 웹에서 골라 즉시 배포하고 이전 빌드로 롤백, 개발자가 아니어도 배포 가능</li>
       <li><strong>에러 수집 대시보드</strong>: docker logs를 뒤져야 보이던 프로덕션 에러를 수집해 한 화면에서 조회</li>
       <li><strong>근로자 행동 히트맵</strong>: 화면별 사용자 행동을 시각화한 사내 첫 행동 데이터 도구. UX 개선의 근거 제공</li>
       <li><strong>봇 실시간 대시보드</strong>: 자동화 봇이 지금 어떤 작업을 어느 단계까지 진행 중인지 추적</li>
@@ -361,7 +361,7 @@
 
   <article class="project">
     <h3>사내 전자문서 NPM 패키지</h3>
-    <div class="meta"><span><b>2024.06 ~ 현재</b></span><span>설계 · 주도 · 운영 전담</span></div>
+    <div class="meta"><span><b>2024.06 ~ 현재</b></span><span>설계 · 배포 · 운영 전담</span></div>
     <p class="desc">
       같은 전자문서 컴포넌트가 4개 프로젝트에 제각각 중복 구현되어, 문서 하나를 고치려면 레포 4곳을 따로 수정해야 하였습니다.
       이를 사내 첫 공통 NPM 패키지로 통합하자고 제안하고, 설계 · 배포 · 운영까지 전담하였습니다.
@@ -424,13 +424,13 @@
     </div>
     <div class="mini"><h4>HAII</h4><div class="meta">2020.03 ~ 2020.11 · FE 100%</div>
       <ul>
-        <li>호핑(소확행 투자 앱) · 뽀미(ADHD 아동 디지털 치료제) 앱 개발 (Ionic)</li>
+        <li>호핑(소확행 투자 앱) · 뽀미(ADHD 아동 디지털 치료제) 앱 개발 (Ionic 5)</li>
         <li>HAII 통합 어드민 개발</li>
       </ul>
     </div>
     <div class="mini"><h4>O2Palm</h4><div class="meta">2019.01 ~ 2020.02</div><p>영화 제작 현장 협업 서비스.</p>
       <ul>
-        <li>Snowpalm 협업앱: Ionic4 리뉴얼 참여(기여 40%)</li>
+        <li>Snowpalm 협업앱: Ionic 4 리뉴얼 참여(기여 40%)</li>
         <li>Snowpalm Pic(영화 제작 관리): 웹 · 앱 기능 개발</li>
       </ul>
     </div>
@@ -442,7 +442,7 @@
   <h2>학력</h2>
   <div class="edu" style="margin-top:28px;">
     <div class="edu-row"><div class="period">2022.03 ~ 2026.02</div><div>숭실대학교 미디어경영학부 졸업</div></div>
-    <div class="edu-row"><div class="period">2016.03 ~ 2019.01</div><div>미림 마이스터고 (정보과학) 졸업</div></div>
+    <div class="edu-row"><div class="period">2016.03 ~ 2019.01</div><div>미림 마이스터고 정보과학과 졸업</div></div>
   </div>
 </section>
 
