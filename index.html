@@ -38,8 +38,10 @@
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
   nav .logo { font-weight: 800; font-size: 0.98rem; }
   nav .links { display: flex; gap: 22px; font-size: 0.88rem; }
-  nav a { color: var(--body); text-decoration: none; }
+  nav a { color: var(--body); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
   nav a:hover { color: var(--accent); }
+  nav a.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  section[id] { scroll-margin-top: 72px; }
 
   /* Hero */
   .hero { padding: 92px 0 72px; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -454,6 +456,48 @@
     lb.showModal();
   });
   lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+
+  // 내비 활성화(scroll-spy) + URL 해시 동기화
+  const navLinks = [...document.querySelectorAll('nav .links a')];
+  const sections = navLinks.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  let current = null;
+  function activate(id) {
+    if (id === current) return;
+    current = id;
+    navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    history.replaceState(null, '', id ? '#' + id : location.pathname);
+  }
+  let pending = null, pendingTimer = null; // 해시 이동 중엔 중간 섹션으로 깜빡이지 않게 잠금
+  function spy() {
+    const line = 96; // 고정 내비 아래 기준선
+    if (pending) {
+      const top = document.getElementById(pending).getBoundingClientRect().top;
+      if (top > line || top < -8) return;
+      pending = null;
+    }
+    let id = null;
+    for (const sec of sections) {
+      if (sec.getBoundingClientRect().top <= line) id = sec.id;
+    }
+    // 페이지 끝에선 마지막 섹션
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) id = sections[sections.length - 1].id;
+    activate(id);
+  }
+  // 해시(#skills 등)로 열거나 내비를 누르면 그 탭을 즉시 활성화, 스크롤은 scroll-margin으로 내비 아래에 맞춤
+  function syncFromHash() {
+    const id = location.hash.slice(1);
+    const target = id && document.getElementById(id);
+    if (!target || !sections.includes(target)) return false;
+    activate(id);
+    pending = id;
+    clearTimeout(pendingTimer);
+    pendingTimer = setTimeout(() => { pending = null; }, 1200);
+    target.scrollIntoView();
+    return true;
+  }
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('hashchange', syncFromHash);
+  if (!syncFromHash()) spy();
 </script>
 </body>
 </html>
