@@ -314,14 +314,14 @@
       동시에 "AI를 끝까지 활용하면 1인 딜리버리가 어디까지 가능한가"를 실험하는 프로젝트이기도 했다.
     </p>
     <ul>
-      <li><strong>연 1,200만 원 규모의 그룹웨어 구독을 자체 ERP로 대체</strong>: 기존 그룹웨어 기능 분석 → HR·근태·휴가·전자결재로 범위 정의, 기존 데이터 마이그레이션 포함 사내 도입 진행</li>
+      <li><strong>연 1,200만 원 규모의 그룹웨어 구독을 자체 ERP로 대체</strong>: 기존 그룹웨어 기능 분석 → HR·근태·휴가·전자결재로 범위 정의, 기존 데이터 마이그레이션 포함 <strong>한 달 만에 출시해 현재 사내 실사용 중</strong></li>
       <li>web(Next.js App Router) + api(NestJS REST · Prisma · MySQL) + shared 타입의 TypeScript 모노레포. 자체 인증 · Slack 연동 · DB 백업 · Docker 배포 · CI까지 운영 전부 소유</li>
       <li>구현은 AI 페어프로그래밍(바이브 코딩)으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접 내렸다</li>
     </ul>
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>pnpm · Turborepo</span><span>Prisma · MySQL</span><span>Docker</span><span>Playwright E2E</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
       <p><strong>그룹웨어 전체가 아니라 실사용 4개만.</strong> 기존 그룹웨어 기능을 분석해 보니 실제로 쓰는 건 HR·근태·휴가·전자결재였다. 메일·메신저는 범위 밖으로 못 박아, 혼자 끝낼 수 있는 크기로 잘랐다.</p>
-      <p><strong>AI는 구현 가속, 설계는 직접.</strong> 아키텍처·데이터 모델·인증·배포는 직접 결정하고 코드 작성은 AI 페어로 진행했다. 전자결재(기안·결재선·수신·참조), 휴가(신청·잔여·캘린더), 증명서 발급(PDF), 조직·계정 관리, 관리자 설정까지 사내 도입 진행 중이다.</p>
+      <p><strong>AI는 구현 가속, 설계는 직접.</strong> 아키텍처·데이터 모델·인증·배포는 직접 결정하고 코드 작성은 AI 페어로 진행했다. 전자결재(기안·결재선·수신·참조), 휴가(신청·잔여·캘린더), 증명서 발급(PDF), 조직·계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중이다.</p>
       <figure class="figure">
         <a href="images/erp-architecture.svg"><img src="images/erp-architecture.svg" alt="ERP 아키텍처" /></a>
         <figcaption>web · api · shared 모노레포, MySQL, 기존 그룹웨어 export 데이터 마이그레이션, Docker · CI · 백업 운영 (클릭하면 크게)</figcaption>
