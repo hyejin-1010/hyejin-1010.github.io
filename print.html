@@ -5,189 +5,232 @@
 <title>김혜진 · 포트폴리오 (PDF)</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
-  @page { size: A4; margin: 17mm 16mm; }
+  @page { size: A4; margin: 15mm 15mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
-    color: #1a1a1a; line-height: 1.8; font-size: 10.5pt; letter-spacing: -0.01em;
+    color: #1a1a1a; line-height: 1.7; font-size: 9.8pt; letter-spacing: -0.01em; word-break: keep-all;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
+  b { color: #111; }
   .page-break { break-before: page; }
 
-  h1 { font-size: 22pt; letter-spacing: -0.02em; }
-  h2 { font-size: 13.5pt; margin: 28pt 0 14pt; padding-bottom: 7pt; border-bottom: 1.5pt solid #2563eb; break-after: avoid; }
-  h3 { font-size: 11.5pt; break-after: avoid; }
-  .role { color: #2563eb; font-weight: 700; font-size: 12pt; margin-top: 4pt; }
-  .lead { margin-top: 12pt; color: #374151; line-height: 1.85; }
-  .contact { margin-top: 10pt; color: #4b5563; font-size: 9.5pt; }
+  /* ── 표지 ── */
+  h1 { font-size: 24pt; letter-spacing: -0.02em; line-height: 1.3; }
+  .role { color: #2563eb; font-weight: 700; font-size: 12.5pt; margin-top: 4pt; }
+  .lead { margin-top: 10pt; color: #374151; font-size: 10.1pt; line-height: 1.8; }
+  .contact { margin-top: 10pt; color: #4b5563; font-size: 9.3pt; }
+  .contact span + span::before { content: " · "; color: #9ca3af; }
+  .note { margin-top: 10pt; padding: 10pt 13pt; background: #f9fafb; border-radius: 8pt; color: #4b5563; font-size: 9.2pt; line-height: 1.7; }
 
-  .row { display: grid; grid-template-columns: 120pt 1fr; gap: 12pt; margin-bottom: 7pt; font-size: 10pt; }
-  .row .k { color: #6b7280; }
-  .badge { display: inline-block; background: #eff6ff; color: #2563eb; font-size: 8.5pt; font-weight: 600; padding: 1pt 7pt; border-radius: 9pt; margin-left: 6pt; }
+  h2 { font-size: 12.5pt; margin: 14pt 0 8pt; padding-bottom: 6pt; border-bottom: 1.5pt solid #2563eb; break-after: avoid; }
+  h2 small { font-weight: 500; color: #6b7280; font-size: 9pt; margin-left: 6pt; }
 
-  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
-  .skill { border: 0.75pt solid #e5e7eb; border-radius: 8pt; padding: 11pt 13pt; font-size: 9.8pt; line-height: 1.7; }
-  .skill b { display: block; color: #6b7280; font-size: 8.8pt; margin-bottom: 4pt; }
+  .toc { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10pt; }
+  .toc > div { border: 0.75pt solid #e5e7eb; border-top: 2.5pt solid #2563eb; border-radius: 8pt; padding: 9pt 12pt; }
+  .toc .n { color: #2563eb; font-size: 8.5pt; font-weight: 700; }
+  .toc h4 { font-size: 10.3pt; margin: 2pt 0 4pt; line-height: 1.4; }
+  .toc p { font-size: 9pt; color: #4b5563; line-height: 1.6; }
 
-  .project { border: 0.75pt solid #e5e7eb; border-left: 2.5pt solid #2563eb; border-radius: 8pt; padding: 15pt 17pt; margin-bottom: 15pt; break-inside: avoid; }
-  .meta { color: #6b7280; font-size: 9.2pt; margin: 4pt 0 9pt; }
-  .desc { color: #374151; font-size: 10.2pt; line-height: 1.8; }
-  ul { list-style: none; margin-top: 9pt; }
-  li { padding-left: 13pt; position: relative; font-size: 10pt; color: #374151; margin-bottom: 5pt; line-height: 1.7; }
-  li::before { content: "·"; position: absolute; left: 3pt; color: #2563eb; font-weight: 700; }
-  li b, .desc b { color: #111; }
+  table.etc { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  table.etc th, table.etc td { text-align: left; padding: 4.5pt 7pt; border-bottom: 0.75pt solid #e5e7eb; vertical-align: top; line-height: 1.55; }
+  table.etc th { color: #6b7280; font-weight: 600; font-size: 8.5pt; border-bottom: 1pt solid #d1d5db; }
+  table.etc td:first-child { font-weight: 600; white-space: nowrap; }
+  table.etc td:nth-child(2) { color: #6b7280; white-space: nowrap; width: 150pt; }
 
-  .detail { margin-top: 11pt; padding-top: 10pt; border-top: 0.75pt dashed #e5e7eb; }
-  .detail p { font-size: 9.8pt; color: #4b5563; margin-bottom: 7pt; line-height: 1.75; }
-  .detail p b { color: #1f2937; }
+  /* ── 플래그십 페이지 ── */
+  .fs { break-before: page; }
+  .fs .num { color: #2563eb; font-weight: 700; font-size: 9pt; letter-spacing: 0.04em; }
+  .fs h2.t { font-size: 15pt; margin: 2pt 0 4pt; padding: 0; border: 0; }
+  .fs .meta { color: #6b7280; font-size: 9pt; margin-bottom: 11pt; padding-bottom: 8pt; border-bottom: 1.5pt solid #2563eb; }
+  .fs .meta b { color: #374151; }
 
-  .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 11pt; margin-top: 12pt; }
-  .figs figure { break-inside: avoid; }
-  .figs img { width: 100%; max-height: 150pt; object-fit: contain; border: 0.75pt solid #e5e7eb; border-radius: 6pt; background: #fff; }
-  .figs.shots img { object-fit: cover; object-position: top; max-height: 135pt; }
-  figcaption { font-size: 8.2pt; color: #6b7280; text-align: center; margin-top: 4pt; }
+  .blk { margin-bottom: 10pt; }
+  .lbl { display: inline-block; font-size: 8pt; font-weight: 700; color: #2563eb; letter-spacing: 0.06em; margin-bottom: 3pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+  .box { border: 0.75pt solid #e5e7eb; border-radius: 8pt; padding: 9pt 11pt; }
+  .box p { color: #374151; font-size: 9.5pt; line-height: 1.7; }
+  ul { list-style: none; }
+  li { padding-left: 11pt; position: relative; font-size: 9.5pt; color: #374151; margin-bottom: 3.5pt; line-height: 1.65; }
+  li::before { content: "·"; position: absolute; left: 2pt; color: #2563eb; font-weight: 700; }
 
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 11pt; }
-  .mini { border: 0.75pt solid #e5e7eb; border-radius: 8pt; padding: 12pt 14pt; break-inside: avoid; }
-  .mini h4 { font-size: 10.5pt; }
-  .mini .meta { margin: 2pt 0 5pt; }
-  .mini ul { margin-top: 5pt; }
-  .mini li { font-size: 9.3pt; margin-bottom: 3.5pt; }
-  footer { margin-top: 24pt; padding-top: 9pt; border-top: 0.75pt solid #e5e7eb; color: #9ca3af; font-size: 8.5pt; text-align: center; }
+  figure { margin: 2pt 0 0; }
+  figure img { width: 100%; max-height: 165pt; object-fit: contain; display: block; }
+  .figs2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+  .figs2 img { max-height: 150pt; border: 0.75pt solid #e5e7eb; border-radius: 6pt; background: #fff; }
+  figcaption { font-size: 8.2pt; color: #6b7280; text-align: center; margin-top: 3pt; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-bottom: 7pt; }
+  .stat { background: #eff6ff; border-radius: 8pt; padding: 8pt 11pt; }
+  .stat .v { font-size: 14pt; font-weight: 800; color: #1d4ed8; letter-spacing: -0.02em; line-height: 1.25; }
+  .stat .c { font-size: 8.6pt; color: #4b5563; margin-top: 2pt; line-height: 1.5; }
+
+  .learn { border-left: 2.5pt solid #2563eb; background: #f9fafb; border-radius: 0 8pt 8pt 0; padding: 8pt 11pt; }
+  .learn p { color: #374151; font-size: 9.3pt; line-height: 1.7; }
+
+  footer { margin-top: 18pt; padding-top: 8pt; border-top: 0.75pt solid #e5e7eb; color: #9ca3af; font-size: 8.3pt; text-align: center; }
 </style>
 </head>
 <body>
 
+<!-- ═══════════════ 표지 ═══════════════ -->
 <header>
   <h1>김혜진 <span style="color:#6b7280;font-weight:500;font-size:13pt;">Heidi</span></h1>
   <div class="role">프로덕트 엔지니어 (Frontend) · 웹/앱 + 개발 생산성</div>
-  <p class="lead">웹과 앱(React Native)을 단독으로 설계·배포하고, 팀이 반복하던 일을 자동화로 전환하는 7년차 프론트엔드 엔지니어입니다. 건설 일용직 HR 플랫폼 '가다'에서 백오피스와 모바일 앱의 React Native 전환을 주도했고, 사내 개발 파이프라인 자동화 10여 종을 단독 구축·운영합니다. 2026.08부터 기획·FE·BE 3인 크로스펑셔널 파트의 파트장으로 제품 방향·우선순위 조율부터 실무까지 이끌고 있습니다.</p>
-  <div class="contact">hyepago@gmail.com &nbsp;·&nbsp; github.com/hyejin-1010</div>
+  <p class="lead">문제를 정의하고 설계 · 구현 · 배포까지 단독으로 끝까지 담당하는 7년차 엔지니어입니다. 건설 일용직 HR 플랫폼 '가다'에서 백오피스(Vue) 초기 설계와 앱의 React Native 전환을 주도했고, 사내 그룹웨어를 대체하는 ERP를 Next.js · NestJS로 0→1 구축했으며, AI 에이전트를 오케스트레이션하는 개발 자동화 11종을 단독 운영합니다. 2026.08부터 기획 · 프론트 · 백엔드로 이루어진 3인 파트의 파트장입니다.</p>
+  <div class="contact"><span>hyepago@gmail.com</span><span>github.com/hyejin-1010</span><span>hyejin-1010.github.io</span></div>
+  <div class="note">이 문서는 대표 프로젝트 3개의 <b>문제 → 판단 → 결과</b>를 담았습니다. 경력 연표 · 기술 스택은 이력서(경력기술서)에 있고, 나머지 프로젝트는 여기서 한 줄 요약만 둡니다. 더 많은 프로젝트와 화면은 hyejin-1010.github.io에 있습니다.</div>
 </header>
 
-<h2>Career <span style="font-weight:500;color:#6b7280;font-size:9.5pt;">총 약 7년</span></h2>
-<div class="row"><div class="k">2023.09 ~ 현재</div><div><b>Worksmate</b><span class="badge">2026.08~ 파트장 · 기획/FE/BE 3인 파트</span></div></div>
-<div class="row"><div class="k">2020.11 ~ 2023.05</div><div><b>Hello Factory</b></div></div>
-<div class="row"><div class="k">2020.03 ~ 2020.11</div><div><b>HAII</b></div></div>
-<div class="row"><div class="k">2019.01 ~ 2020.02</div><div><b>O2Palm</b></div></div>
-
-<h2>Skills</h2>
-<div class="skills">
-  <div class="skill"><b>Web Front-End</b>Vue 3 · TypeScript · Vite · Pinia · Tailwind · PrimeVue</div>
-  <div class="skill"><b>App</b>React Native · TanStack Query · Zustand · NativeWind (Flutter 유지보수 경험)</div>
-  <div class="skill"><b>개발 생산성 · 인프라</b>Fastlane · Bitbucket Pipelines · OTA(Hot Updater) · Docker · Playwright·Maestro E2E · AI 에이전트 오케스트레이션</div>
-  <div class="skill"><b>Backend (확장 중)</b>Laravel·PHP · FastAPI·Python</div>
+<h2>대표 프로젝트 3</h2>
+<div class="toc">
+  <div><div class="n">01</div><h4>사내 개발 파이프라인 자동화<br/>(AI 에이전트 오케스트레이션)</h4><p>이슈당 1~2시간 → 5분. 자동화 11종 + 워치독 4종을 단독 운영. 어디에 AI를 넣고 어디에 안 넣을지의 판단.</p></div>
+  <div><div class="n">02</div><h4>사내 ERP 0→1<br/>(Next.js · NestJS · Prisma)</h4><p>연 1,200만 원 그룹웨어 구독을 자체 ERP로 대체. 기획 · 설계 · 구현 · 배포 · 마이그레이션을 근무 외 시간에 혼자.</p></div>
+  <div><div class="n">03</div><h4>가다 앱 Flutter → React Native 전환</h4><p>네이티브 배포 1~3일 → 4분. 수정 비용이 재구축을 넘었다는 판단에서 전환 제안 · 구조 설계 · 배포 파이프라인까지.</p></div>
 </div>
 
-<h2 class="page-break">Selected Work</h2>
+<h2>그 외 작업 <small>상세는 이력서 · hyejin-1010.github.io</small></h2>
+<table class="etc">
+  <tr><th>프로젝트</th><th>기간 · 역할</th><th>한 줄</th></tr>
+  <tr><td>가다 백오피스</td><td>2023.10~ · 초기 설계 단독</td><td>화면 약 100개 운영 어드민. 회사 첫 TypeScript 도입 제안 · 정착, 필드 배열만으로 폼 자동 렌더링 · 테이블↔카드뷰 공통 columns</td></tr>
+  <tr><td>근로자앱 · 관리자앱 웹뷰</td><td>2023.10~ · 핵심 기여</td><td>앱 내 웹 서비스. 로그인 · 간편인증을 거쳐도 목적지가 보존되는 딥링크, 앱-웹 postMessage 인터페이스 설계</td></tr>
+  <tr><td>개발 실험실 dev-labs</td><td>2026.08~ · 발제 · 구축 단독</td><td>게이트웨이 뒤에 도구별 컨테이너를 붙였다 떼는 플랫폼. 배포 콘솔(빌드 · 배포 분리로 백엔드→프론트 배포 간격 단축 · 롤백) · 에러 대시보드 · 행동 히트맵</td></tr>
+  <tr><td>전자문서 NPM 패키지</td><td>2024.06~ · 전담</td><td>레포 4곳 중복 구현을 사내 첫 공통 패키지로. beta→안정판 2단계 배포로 소비처 장애 0, 커스텀 계약서 18종</td></tr>
+  <tr><td>가다오피스 · 알림 · 핀페이 · WTrust</td><td>2023.10~현재</td><td>노무 문서 PDF/엑셀 공통화, Push · SMS 통합 컴포넌트, 임금 선지급 어드민(React), 무로그인 외부 동의 페이지</td></tr>
+  <tr><td>Hello Factory · HAII · O2Palm</td><td>2019~2023 · FE 100%</td><td>실시간 학생 피드백(GraphQL Subscription), 통합 어드민, Flutter/BLE 세팅앱, Ionic · Angular 앱(O2Palm은 리뉴얼 참여)</td></tr>
+</table>
 
-<div class="project">
-  <h3>가다 앱 · Flutter 유지보수 → React Native 전환</h3>
-  <div class="meta">2023.11 ~ 현재 · RN 전환·초기 구조 단독 주도 → 이후 공동 개발</div>
-  <p class="desc">2년간 유지보수한 Flutter 앱의 구조적 한계(기술 부채·두 언어 병행·레포 분리)를 근거로 React Native 전환을 직접 제안, 구조 설계부터 배포 파이프라인까지 단독 구축했다. 근로자앱·관리자앱을 단일 모노레포로 통합했다.</p>
-  <ul>
-    <li><b>네이티브 화면 OTA 배포 1~3일 → 4분 이내</b>: 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
-    <li><b>앱 crash-free 사용자 99.96% / 세션 99.99%</b> 유지</li>
-    <li>간편인증 중 OS 앱 종료 문제(건강검진서 등록)를 진행 상태 저장+재진입 이어하기로 해결·배포</li>
-    <li>Fastlane + Pipelines 배포 자동화 · <b>iOS·Android 병렬 빌드 40분 → 20분</b>: 트리거 후 개발자가 기다릴 필요 없음</li>
-    <li>OTA 번들 업데이트(JS 재시작)에도 딥링크가 유실되지 않는 보존 설계</li>
-    <li>오픈소스: channel_talk_flutter에 API 추가 PR 머지 (v4.1.0)</li>
-  </ul>
-  <div class="detail">
-    <p><b>전환 판단.</b> 수정 비용이 재구축 비용을 넘었다고 판단해 전환을 제안했다. RN 선택의 핵심은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있다는 점이었다. 스타일도 웹과 같은 Tailwind 체계(NativeWind)로 통일했다. 사용자가 앱이 바뀐 걸 인지하지 못해야 한다는 전제로 기존 기능·UX를 1:1 재현했다.</p>
-    <p><b>OTA 리스크 관리.</b> 도구 선정 단계에서 롤백 지원을 필수 기준으로 두고 Hot Updater를 선택, 복구 절차를 검증했다.</p>
+<!-- ═══════════════ 01 자동화 ═══════════════ -->
+<section class="fs">
+  <div class="num">01</div>
+  <h2 class="t">사내 개발 파이프라인 자동화 (AI 에이전트 오케스트레이션)</h2>
+  <div class="meta"><b>2024.06 ~ 현재</b> · 단독 설계 · 구축 · 운영 · Python, Claude Code, Slack Socket Mode, launchd, Bitbucket API</div>
+
+  <div class="two blk">
+    <div class="box"><span class="lbl">문제</span>
+      <p>프론트 2명 팀에 반복 작업이 사람 손에 묶여 있었다. 프로덕션 크래시를 보고 이슈로 옮기고, 이슈를 고쳐 PR을 내고, 배포되면 이슈 시트(구글 시트) 상태를 바꾸고, 계약서 같은 정형 문서를 요청받아 수기로 만들었다. <b>이슈당 1~2시간, 문서 건당 평균 2시간</b>이 들었고, 담당자가 바쁘면 전부 멈췄다.</p>
+    </div>
+    <div class="box"><span class="lbl">판단</span>
+      <ul>
+        <li><b>범위를 의도적으로 한정.</b> 핵심 제품 코드가 아니라 크래시 대응 · 보조 서비스 유지보수 · 문서 생성처럼 반복적이고 범위가 명확한 일에만 에이전트를 투입. 리뷰 비용이 산출물 가치를 넘지 않는 영역부터.</li>
+        <li><b>사람은 판단만.</b> 산출물은 리뷰 · 렌더 검증 게이트를 통과해야 반영. 개입 지점을 리뷰 · 머지로만 줄임.</li>
+        <li><b>가장 큰 위험은 침묵 실패.</b> 자동화가 조용히 멈추는 걸 감시하는 워치독을 별도 계층으로 둠.</li>
+      </ul>
+    </div>
   </div>
-  <div class="figs">
-    <figure><img src="images/gada-mobile-hub-monorepo.svg" alt="모노레포 구조" /><figcaption>근로자앱·관리자앱 모노레포 구조</figcaption></figure>
-    <figure><img src="images/gada-mobile-hub-pipeline.svg" alt="배포 파이프라인" /><figcaption>배포 파이프라인: 스토어 빌드 · OTA</figcaption></figure>
+
+  <div class="blk">
+    <span class="lbl">구조</span>
+    <figure><img src="images/automation-loop.svg" alt="이슈 → PR → 배포 루프와 워치독" /><figcaption>이슈 → 에이전트 PR → 사람 리뷰 → 배포 → 상태 전이 루프. 워치독 4종이 루프 자체를 감시한다.</figcaption></figure>
   </div>
-</div>
 
-<div class="project">
-  <h3>사내 개발 파이프라인 자동화 (AI 에이전트 오케스트레이션)</h3>
-  <div class="meta">2024.06 ~ 현재 · 단독 설계·구축·운영 · Python, Slack Socket Mode</div>
-  <p class="desc">프론트 2명 팀의 반복 작업(이슈 처리·배포 상태 관리·크래시 트리아지·정형 문서 생성)을 AI 에이전트를 오케스트레이션하는 자동화로 옮겼다. 이슈·배포·문서·리포트 등 자동화 10여 종을 상시 구동하고, 이를 감시하는 워치독 4종을 별도로 두어 운영한다.</p>
-  <ul>
-    <li><b>이슈 → PR → 배포 루프 무인화</b>: 이슈당 개발자 1~2시간 들던 처리가 경미한 이슈 기준 확인·리뷰 5분 이내로 단축</li>
-    <li>적용 범위를 의도적으로 한정: 핵심 제품이 아닌, 크래시 대응·보조 서비스 유지보수처럼 반복적이고 범위가 명확한 작업에만</li>
-    <li><b>정형 문서 자동 생성</b>: 엑셀 한 장 → PDF/xlsx. 건당 평균 2시간 걸리던 수기 작업을 요청자 셀프서비스로 전환, 개발자 관여 5분 이내</li>
-    <li><b>워치독 4종</b>: 파이프라인 실패·봇 연결 끊김·수집 키 오염·토큰 만료, 침묵 실패를 감지해 경보·자동 복구</li>
-  </ul>
-</div>
-
-<div class="project page-break">
-  <h3>가다 백오피스</h3>
-  <div class="meta">2023.10 ~ 현재 · 초기 설계·구축 단독 주도 → 이후 공동 개발 · Vue3, TypeScript, Vite</div>
-  <p class="desc">화면 약 100개 규모 어드민을 착수 시점부터 설계했다. 회사 첫 TypeScript 도입을 제안해 정착시켰고(이후 신규 프로젝트 기본 채택), 핵심 공통 컴포넌트를 직접 만들어 UI 표준을 세웠다.</p>
-  <ul>
-    <li>상세 폼은 <b>필드 배열만 정의하면 자동 렌더링</b>: 새 메뉴 추가 시 폼 구현 비용 최소화</li>
-    <li>동일 columns 정의로 데스크탑 테이블 ↔ 모바일 카드뷰 자동 전환</li>
-  </ul>
-</div>
-
-<div class="project">
-  <h3>사내 ERP (HR·근태·휴가·전자결재) · 자기주도 사이드</h3>
-  <div class="meta">2026.06 ~ 현재 · 기획·설계·구현·배포 단독 (근무 외) · TS 풀스택 모노레포, Docker</div>
-  <p class="desc">회사의 고정 지출(그룹웨어 구독) 절감 니즈를 직접 풀기로 하고, 기존 ERP 분석부터 기획·개발·배포까지 근무 외 시간에 혼자 진행한 자기주도 프로젝트다. 동시에 AI를 끝까지 활용한 1인 딜리버리 실험. api+web 모노레포 · 자체 인증 · Docker+CI. 구현은 AI 페어프로그래밍으로 가속하되, 아키텍처·인증·배포 등 핵심 설계 결정은 직접 내렸다.</p>
-</div>
-
-<div class="project">
-  <h3>사내 개발 실험실 플랫폼 (dev-labs)</h3>
-  <div class="meta">2026.08 ~ 현재 · 발제·기획·구축 단독 · FastAPI, Vue3, Docker, Traefik</div>
-  <p class="desc">"이런 도구가 있으면 좋겠다" 싶은 것들을 직접 만들어 올리는 사내 실험실 플랫폼으로, 개발·운영은 혼자, 사용자는 팀 전체다. 배포 콘솔(빌드·배포 분리: 미리 빌드한 결과물을 골라 즉시 배포·롤백) · 에러 수집 대시보드(docker logs 가시성 통합) · 근로자 행동 히트맵(사내 첫 행동 데이터 도구) · 봇 실시간 대시보드를 운영한다.</p>
-</div>
-
-<div class="project">
-  <h3>사내 전자문서 NPM 패키지</h3>
-  <div class="meta">2024.06 ~ 현재 · 설계·배포·운영 전담 · Vue3, TypeScript, standard-version</div>
-  <p class="desc">같은 전자문서 컴포넌트가 4개 프로젝트에 제각각 중복 구현되어, 문서 하나를 고치려면 레포 4곳을 따로 수정해야 했다. 이를 사내 첫 공통 NPM 패키지로 통합하자고 제안하고 설계·배포·운영까지 전담했다. 지금은 커스텀 계약서 18종이 이 패키지 위에서 관리된다.</p>
-  <ul>
-    <li>레포 4곳 개별 수정 → 패키지 버전 1회 배포로 전 프로젝트 동시 반영</li>
-    <li>beta 사전 검증 → 안정판 승격 2단계 배포로 소비처 장애 0 · standard-version으로 버전·CHANGELOG 자동화</li>
-    <li>중복 구현을 패키지로 분리·배포하는 체계를 사내에 처음 도입</li>
-  </ul>
-  <div class="figs">
-    <figure><img src="images/gada-document-component-structure.svg" alt="패키지 구조" /><figcaption>4개 프로젝트가 소비하는 공통 패키지 구조</figcaption></figure>
-  </div>
-</div>
-
-<div class="project page-break">
-  <h3>가다 근로자앱·관리자앱 (웹뷰 콘텐츠)</h3>
-  <div class="meta">2023.10 ~ 현재 · 근로자앱 핵심 기여 / 관리자앱 공동 개발 · Vue3, Pinia, Tailwind</div>
-  <p class="desc">앱 내 웹 서비스(근로자앱 93·관리자앱 44개 화면). 출역·이벤트 구좌·포인트몰·QR 안전교육 등 핵심 플로우 개발.</p>
-  <ul>
-    <li>푸시·배너 → 목적지 직행 딥링크: 로그인·인증이 개입해도 가로채기→보류→이어처리로 목적지 보존</li>
-    <li>홈 팝업 우선순위·조건 체계 정합화, 공통 풀팝업 통합 · 앱-웹 postMessage 인터페이스 짝 설계</li>
-  </ul>
-  <div class="figs shots">
-    <figure><img src="images/worker-home.png" alt="근로자앱 홈" /><figcaption>근로자앱 홈 (dev)</figcaption></figure>
-    <figure><img src="images/manager-home.png" alt="관리자앱 홈" /><figcaption>관리자앱 홈 (dev)</figcaption></figure>
-  </div>
-</div>
-
-<h2>More Projects</h2>
-<div class="grid2">
-  <div class="mini"><h4>가다오피스</h4><div class="meta">2024.04 ~ 현재 · 주도 개발</div>
-    <ul><li>노무 문서 9종 중 6종 담당: PDF/엑셀 다운로드 공통화(html2canvas+jsPDF+ZIP 암호화)</li><li>서버 미지원 일괄 다운로드를 프론트 전용으로 해결</li></ul></div>
-  <div class="mini"><h4>가다 핀페이</h4><div class="meta">2025.05 ~ 2026.06 · 기능 개발 참여</div>
-    <ul><li>임금 선지급·정산 핀테크 어드민 (React Native)</li><li>직접지급·은행별(전북·iM·하나) 분기, 이체 승인 플로우</li></ul></div>
-  <div class="mini"><h4>사내 알림 시스템</h4><div class="meta">2023.10 ~ 2026.07 · 주도 개발</div>
-    <ul><li>Push·SMS 공통 컴포넌트 + type 분기 통합</li><li>EUC-KR 차단·바이트 기반 SMS/MMS 전환·법정 문구 자동 처리</li></ul></div>
-  <div class="mini"><h4>WTrust 계약 관리</h4><div class="meta">2024.10 ~ 2026.07 · 공동 개발(최다 기여)</div>
+  <div class="blk">
+    <span class="lbl">결과</span>
+    <div class="stats">
+      <div class="stat"><div class="v">1~2시간 → 5분</div><div class="c">이슈당 개발자 처리 시간 (경미한 이슈 기준, 확인 · 리뷰만)</div></div>
+      <div class="stat"><div class="v">2시간 → 5분</div><div class="c">정형 문서 생성. 요청자 셀프서비스로 전환, 개발자 관여 최소화</div></div>
+      <div class="stat"><div class="v">11종 + 4</div><div class="c">상시 구동 자동화 + 워치독(파이프라인 · 봇 연결 · 수집 키 · 토큰)</div></div>
+    </div>
     <ul>
-<li>무로그인 외부 동의 페이지: 상태별 분기·권한 제어</li></ul></div>
-  <div class="mini"><h4>Hello Factory</h4><div class="meta">2020.11 ~ 2023.05 · FE 100%</div>
-    <ul><li>헬로클릭(실시간 학생 피드백 시스템): GraphQL Subscription 실시간, 통계·원격수업</li><li>통합 어드민 · 세팅앱(Flutter/BLE)</li></ul></div>
-  <div class="mini"><h4>HAII · O2Palm</h4><div class="meta">2019 ~ 2020</div>
-    <ul><li>호핑(Ionic 앱)·통합 어드민 FE 100%</li><li>Snowpalm 리뉴얼(40%)·Pic 웹·앱</li></ul></div>
-</div>
+      <li>이슈 → PR → 배포 루프 무인화: 크래시 자동 이슈화 → 에이전트 코드 작업 · PR → 사람 리뷰 · 머지 → 배포 반영 시 이슈 상태 자동 전이</li>
+      <li>엑셀 한 장 → 커스텀 문서 컴포넌트 → PDF/xlsx 자동 생성. 병렬 요청은 격리 워크스페이스로 충돌 방지</li>
+      <li>반복 작업의 담당자 의존 제거: 그 사람이 없어도 루프가 돈다</li>
+    </ul>
+  </div>
 
-<h2>Education · 기타</h2>
-<div class="row"><div class="k">2022.03 ~ 2026.02</div><div>숭실대학교 미디어경영학부 졸업</div></div>
-<div class="row"><div class="k">2016.03 ~ 2019.01</div><div>미림여자정보과학고등학교(정보과학) 졸업</div></div>
-<div class="row"><div class="k">오픈소스</div><div>channel_talk_flutter에 setPreventDefaultUrlClick API 추가 PR 머지 (v4.1.0)</div></div>
+  <div class="learn"><span class="lbl">배운 것 · 다음</span>
+    <p>워치독은 처음부터 있던 게 아니다. 수집 키가 오염돼 에러 로그가 401로 조용히 끊긴 일, 봇 소켓만 끊겨 아무 알림 없이 offline이 된 일을 겪고 나서 "실패를 알리는 자동화"를 따로 세웠다. 다음은 절감 시간을 추정이 아니라 계측으로 바꾸는 것. 봇 작업 대시보드에 작업별 소요를 쌓는 중이다.</p>
+  </div>
+</section>
 
-<footer>김혜진 (Heidi) · hyepago@gmail.com · github.com/hyejin-1010</footer>
+<!-- ═══════════════ 02 ERP ═══════════════ -->
+<section class="fs">
+  <div class="num">02</div>
+  <h2 class="t">사내 ERP (HR · 근태 · 휴가 · 전자결재) · 0→1 자기주도 프로젝트</h2>
+  <div class="meta"><b>2026.08 ~ 현재</b> · 기획 · 설계 · 구현 · 배포 단독 (근무 외 시간) · Next.js 16 App Router, React 19, TanStack Query, Zustand, Tailwind 4 · NestJS 11, Prisma 6, MySQL 8 · pnpm · Turborepo, Docker, Playwright</div>
+
+  <div class="two blk">
+    <div class="box"><span class="lbl">문제</span>
+      <p>회사가 그룹웨어 구독에 <b>연 1,200만 원</b>을 쓰고 있었고 고정비 절감이 필요했다. 기존 그룹웨어 기능을 분석해 보니 실제로 쓰는 건 HR · 근태 · 휴가 · 전자결재 네 가지였다. 누가 시킨 일이 아니라 "이건 내가 풀 수 있다"고 판단해 직접 제안하고 근무 외 시간에 시작했다.</p>
+    </div>
+    <div class="box"><span class="lbl">판단</span>
+      <ul>
+        <li><b>그룹웨어 전체가 아니라 실사용 4개만 대체.</b> 메일 · 메신저는 범위 밖으로 못 박아 단독으로 끝낼 수 있는 크기로 잘랐다.</li>
+        <li><b>TypeScript 한 언어, 한 레포.</b> 단독으로 전부 맡아야 하니 web · api · shared 타입을 모노레포로 묶어 왕복 비용을 줄였다.</li>
+        <li><b>AI는 구현 가속, 설계는 직접.</b> 아키텍처 · 데이터 모델 · 인증 · 배포는 내가 결정하고 코드 작성은 AI 페어로. 1인 딜리버리가 어디까지 가는가의 실험이기도 했다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">구조</span>
+    <figure><img src="images/erp-architecture.svg" alt="ERP 아키텍처" /><figcaption>web · api · shared 모노레포, MySQL, 기존 그룹웨어 export 데이터 마이그레이션, Docker · CI · 백업 운영</figcaption></figure>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">결과</span>
+    <div class="stats">
+      <div class="stat"><div class="v">연 1,200만 원</div><div class="c">그룹웨어 구독 대체 규모. 데이터 마이그레이션 포함 한 달 만에 출시, 현재 사내 실사용 중</div></div>
+      <div class="stat"><div class="v">출시 1개월 · 341 커밋</div><div class="c">2026.08.28 재구축 착수, 한 달 만에 출시 후 확장. API 모듈 16 · E2E 12</div></div>
+      <div class="stat"><div class="v">운영 전부 직접</div><div class="c">자체 인증 · Slack 연동 · Docker 배포 · CI · 일 1회 백업 · 운영 문서</div></div>
+    </div>
+    <ul>
+      <li>전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정</li>
+      <li>아이디어 → 범위 정의 → 출시까지 한 사람 안에서 완성한 제품 오너십</li>
+    </ul>
+  </div>
+
+  <div class="learn"><span class="lbl">배운 것 · 다음</span>
+    <p>단독으로 빨리 만들다 보면 보안 · 운영을 뒤로 미루게 된다. 출시 속도를 우선해 미뤄 둔 인증 토큰 저장 방식 보강과 백업 오프사이트 이전을 운영 과제로 잡아 진행하고 있다. "만들었다"와 "운영한다"의 차이를 배우는 중이다.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 03 RN 전환 ═══════════════ -->
+<section class="fs">
+  <div class="num">03</div>
+  <h2 class="t">가다 앱 · Flutter 유지보수 → React Native 전환</h2>
+  <div class="meta"><b>Flutter 유지보수 2023.11~ → RN 전환 2025.11~</b> · 전환 제안 · 초기 구조 단독 주도 → 이후 공동 개발 · React Native, TypeScript, TanStack Query, Zustand, NativeWind, Fastlane, Hot Updater</div>
+
+  <div class="two blk">
+    <div class="box"><span class="lbl">문제</span>
+      <p>외주로 만들어진 Flutter 앱을 2년간 유지보수했다. 웹은 Vue · TypeScript인데 앱만 Dart라 두 언어를 병행했고, 근로자앱 · 관리자앱 레포가 따로였으며, 외주 기술 부채가 쌓여 작은 수정에도 비용이 컸다. 네이티브 화면을 고치면 <b>스토어 심사까지 1~3일</b>이 걸렸다.</p>
+    </div>
+    <div class="box"><span class="lbl">판단</span>
+      <ul>
+        <li><b>수정 비용이 재구축 비용을 넘었다</b>고 판단해 전환을 제안했다. 기준은 웹 개발자가 별도 언어 없이 앱을 유지보수할 수 있을 것. React Native + 웹과 같은 Tailwind 체계(NativeWind).</li>
+        <li><b>사용자는 바뀐 걸 몰라야 한다.</b> 기존 기능 · UX 1:1 재현을 전제로, 두 앱을 단일 모노레포로 통합.</li>
+        <li><b>OTA 도구는 롤백 지원이 필수 기준.</b> Hot Updater를 선택하고 복구 절차를 먼저 검증했다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">구조</span>
+    <div class="figs2">
+      <figure><img src="images/gada-mobile-hub-monorepo.svg" alt="모노레포 구조" /><figcaption>근로자앱 · 관리자앱 모노레포 구조</figcaption></figure>
+      <figure><img src="images/gada-mobile-hub-pipeline.svg" alt="배포 파이프라인" /><figcaption>배포 파이프라인: 스토어 빌드 · OTA</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="blk">
+    <span class="lbl">결과</span>
+    <div class="stats">
+      <div class="stat"><div class="v">1~3일 → 4분</div><div class="c">네이티브 화면 OTA 배포. 웹뷰의 즉시 배포 속도를 네이티브까지 확장</div></div>
+      <div class="stat"><div class="v">40분 → 20분</div><div class="c">iOS · Android 병렬 스토어 빌드. 수동 Xcode 아카이브 → 누구나 파이프라인 배포</div></div>
+      <div class="stat"><div class="v">99.96% / 99.99%</div><div class="c">crash-free 사용자 / 세션</div></div>
+    </div>
+    <ul>
+      <li>간편인증 중 OS가 앱을 종료해 진행이 사라지던 문제(건강검진서 등록)를 진행 상태 저장 + 재진입 이어하기로 해결 · 배포</li>
+      <li>OTA 번들 업데이트(JS 재시작)에도 딥링크가 유실되지 않는 보존 설계 · ChannelTalk Flutter SDK 오픈소스 PR 머지(v4.1.0)</li>
+    </ul>
+  </div>
+
+  <div class="learn"><span class="lbl">배운 것 · 다음</span>
+    <p>플랫폼이 바뀌면 멀쩡하던 동작이 깨진다. Android 16 예측형 뒤로가기가 종료 가드를 무력화했고, RN New Architecture에서 네이티브 콜백 이중 호출 크래시가 났다. 후자는 재현이 안 돼 Crashlytics 추이로 수정 효과를 검증하는 절차를 뒀다. 다음은 OS · RN 업데이트 전 회귀를 자동으로 잡는 E2E(Maestro)를 릴리즈 게이트로 올리는 것.</p>
+  </div>
+
+  <footer>김혜진 (Heidi) · hyepago@gmail.com · github.com/hyejin-1010 · hyejin-1010.github.io</footer>
+</section>
 
 </body>
 </html>
