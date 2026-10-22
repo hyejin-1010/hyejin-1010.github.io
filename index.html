@@ -201,7 +201,7 @@
 <section id="skills">
   <span class="sec-cap">Skills</span>
   <h2>기술</h2>
-  <p class="sec-desc">주력은 Vue 3 · TypeScript이고, 앱은 React Native입니다. ERP는 Next.js · NestJS 풀스택으로 직접 만들었고, 배포 · 테스트 · 자동화까지 다룹니다.</p>
+  <p class="sec-desc">주력은 Vue 3 · TypeScript이고, 앱은 React Native입니다. ERP는 Next.js · NestJS 풀스택으로 구축했고, 배포 · 테스트 · 자동화까지 다룹니다.</p>
   <div class="skills">
     <div class="skill-group"><h3>WEB FRONT-END</h3>
       <div class="chips"><span class="chip">Vue 3</span><span class="chip">Nuxt 3 (SSR)</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Pinia</span><span class="chip">Tailwind</span><span class="chip">PrimeVue</span><span class="chip">Next.js (App Router)</span><span class="chip">React 19</span></div>
@@ -235,8 +235,8 @@
       <li><strong>네이티브 화면 OTA 배포 1~3일 → 4분 이내</strong>: Hot Updater 도입으로 웹뷰의 즉시 배포 속도를 네이티브 영역까지 확장</li>
       <li><strong>앱 crash-free 사용자 99.96% / 세션 99.99%</strong> 유지</li>
       <li>Fastlane + Bitbucket Pipelines 배포 자동화, <strong>iOS · Android 병렬 빌드로 40분 → 20분</strong>: 트리거 후 개발자가 기다릴 필요 없음</li>
-      <li><strong>끊기지 않는 딥링크</strong>: 푸시 · 배너 · 트래킹 링크로 들어온 사용자가 앱 기동 · OTA 재시작 · 로그인 · 간편인증을 거쳐도 목적지가 보존되도록, 네이티브 보류 → 인증 완료 후 이어처리 흐름을 웹과 짝으로 설계. 적용 이후 딥링크 유실 문의 0건</li>
-      <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태 저장 + 재진입 이어하기로 해결 · 배포</li>
+      <li><strong>끊기지 않는 딥링크</strong>: 푸시 · 배너 · 트래킹 링크로 들어온 사용자가 앱 기동 · OTA 재시작 · 로그인 · 간편인증을 거쳐도 목적지가 보존되도록, 앱이 링크를 보관했다가 인증이 끝나면 처리하는 흐름을 웹과 함께 설계. 적용 이후 딥링크 유실 문의 0건</li>
+      <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태를 저장하고 재진입 시 이어서 처리하도록 개선</li>
       <li>오픈소스 기여: ChannelTalk Flutter SDK에 API 추가 PR 머지 (v4.1.0)</li>
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
@@ -264,7 +264,7 @@
       AI 에이전트를 오케스트레이션하는 자동화 시스템으로 옮겼습니다. 이슈 · 배포 · 문서 · 리포트 등 자동화 11종을 상시 구동하고, 이를 감시하는 워치독 4종을 별도로 두어 단독 운영합니다.
     </p>
     <ul>
-      <li><strong>이슈 → PR → 배포 루프 무인화</strong>: 크래시 자동 이슈화 → AI 코드작업 · PR 생성 → 사람은 리뷰 · 머지만. 앱 이슈 원인 분석 · 해결안 도출에 1~2시간 들던 것을 에이전트 결과 확인 · 리뷰 5분 이내로 단축(경미한 이슈 기준)</li>
+      <li><strong>이슈 → PR → 배포 루프 자동화</strong>: 크래시를 자동으로 이슈화하고 AI가 수정 PR까지 올리면 사람은 리뷰 · 머지만. 앱 이슈 원인 분석 · 해결안 도출에 1~2시간 들던 것을 에이전트 결과 확인 · 리뷰 5분 이내로 단축(경미한 이슈 기준)</li>
       <li>적용 범위를 의도적으로 한정: 핵심 제품이 아닌, 크래시 대응 · 보조 서비스 유지보수처럼 반복적이고 범위가 명확한 작업에만</li>
       <li><strong>정형 문서 자동 생성</strong>: 엑셀 한 장 → 커스텀 컴포넌트 → PDF/xlsx. 건당 평균 2시간 걸리던 수기 작업을 요청자 셀프서비스로 전환, 개발자 관여 5분 이내</li>
       <li><strong>워치독 4종</strong>: 자동화가 조용히 멈추는 침묵 실패를 감지해 경보 · 자동 복구</li>
@@ -286,7 +286,7 @@
     <h3>가다 백오피스</h3>
     <div class="meta"><span><b>2023.10 ~ 현재</b></span><span>초기 설계 · 구축 단독 주도 → 이후 공동 개발</span></div>
     <p class="desc">
-      PHP에 프론트와 백엔드가 묶여 있던 어드민을 분리해 화면 약 100개 규모 어드민을 새로 설계하였습니다. 회사 첫 TypeScript 도입을 제안해 정착시켰고, 이후 신규 프로젝트가 TypeScript를 기본으로 채택하였습니다.
+      PHP에 프론트와 백엔드가 묶여 있던 어드민의 프론트를 분리하기로 하면서, 새 어드민의 초기 설계와 구축을 맡았습니다. 회사 첫 TypeScript 도입을 제안해 정착시켰고, 이후 신규 프로젝트가 TypeScript를 기본으로 채택하였습니다.
       CommonTable · CustomInput 등 핵심 공통 컴포넌트를 직접 만들어 공통화 기준을 세웠고, 팀의 화면들이 이 체계 위에서 만들어지는 표준이 되었습니다.
     </p>
     <ul>
@@ -305,11 +305,11 @@
     <h3>가다 근로자앱 · 관리자앱 웹 (WebView 콘텐츠)</h3>
     <div class="meta"><span><b>2023.10 ~ 현재</b></span><span>근로자앱 핵심 기여 · 관리자앱 공동 개발</span></div>
     <p class="desc">
-      앱 화면 대부분을 구성하는 WebView 웹 서비스입니다. 출역 지원 · 확인, 홈 팝업/배너/이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발하였습니다. 웹과 네이티브의 경계, 그리고 건설 현장의 불안정한 네트워크와 기기 환경에서 생기는 실패를 다루는 일을 주로 담당하였습니다.
+      앱 화면 대부분을 구성하는 WebView 웹 서비스입니다. 출역 지원 · 확인, 홈 팝업 · 배너 · 이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발하였습니다. 웹과 네이티브의 경계, 그리고 건설 현장의 불안정한 네트워크와 기기 환경에서 생기는 실패를 다루는 일을 주로 담당하였습니다.
     </p>
     <ul>
-      <li><strong>현장 네트워크에 맞춘 영상 스트리밍 전환</strong>: 원본 파일을 그대로 불러와 인터넷이 느린 현장에서 로딩이 길고 재생이 자주 멈추던 자체 안전교육 영상을, 네트워크 상태에 맞춰 화질을 조절하는 Cloudflare Stream으로 제안 · 전환. 시청 완료 감지 함께 구현, 전환 이후 영상 재생 문의 0건</li>
-      <li><strong>네이티브 브릿지 연동</strong>: postMessage 기반 인증 · 로그아웃 · 공유 · 뒤로가기를 네이티브와 짝으로 설계하고, 웹 내부 링크는 네이티브로 넘겨 처리</li>
+      <li><strong>현장 네트워크에 맞춘 영상 스트리밍 전환</strong>: 원본 파일을 그대로 재생해 인터넷이 느린 현장에서 로딩이 길고 자주 멈추던 안전교육 영상을, 네트워크 상태에 맞춰 화질을 조절하는 Cloudflare Stream으로 제안 · 전환. 시청 완료 감지도 함께 구현, 전환 이후 영상 재생 문의 0건</li>
+      <li><strong>네이티브 브릿지 연동</strong>: 인증 · 로그아웃 · 공유 · 뒤로가기를 postMessage로 앱과 연동하고, 웹 안의 링크를 앱이 받아 처리하도록 설계</li>
       <li><strong>홈 팝업 체계 정합화</strong>: 성격이 다른 팝업들의 노출 우선순위 · 조건을 정리하고 공통 풀팝업으로 통합. 신규 팝업이 체계에 얹히는 구조로 정착</li>
     </ul>
     <div class="stack"><span>Vue 3</span><span>Vite</span><span>Pinia</span><span>Tailwind</span></div>
@@ -324,7 +324,7 @@
 
   <article class="project">
     <h3>사내 ERP (HR · 근태 · 휴가 · 전자결재)</h3>
-    <div class="meta"><span><b>2026.08 ~ 현재</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 사이드)</span></div>
+    <div class="meta"><span><b>2026.08 ~ 현재</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 프로젝트)</span></div>
     <p class="desc">
       회사에 그룹웨어 구독 같은 고정 지출을 줄이려는 니즈가 있어 직접 풀기로 하였습니다. 근무 외 시간에
       기존 ERP(하이웍스) 분석부터 기획 · 개발 · 배포까지 전 과정을 단독으로 진행한 자기주도 프로젝트입니다.
@@ -337,7 +337,7 @@
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>Prisma · MySQL</span><span>Docker</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
       <p><strong>그룹웨어 전체가 아니라 실사용 4개만.</strong> 기존 그룹웨어 기능을 분석해 보니 실제로 쓰는 건 HR · 근태 · 휴가 · 전자결재였습니다. 메일 · 메신저는 범위 밖으로 못 박아, 단독으로 끝낼 수 있는 크기로 잘랐습니다.</p>
-      <p><strong>AI에 구현을 맡길수록 방향과 검증은 직접.</strong> 구현 중 정해진 사항까지 기획서에 계속 반영해 AI가 요구사항에서 벗어나지 않게 하였고, 이 기획서로 기능 문의에 답하는 봇도 운영하였습니다. 전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중입니다.</p>
+      <p><strong>기획서로 방향을 고정.</strong> 구현 중 정해진 사항까지 기획서에 계속 반영해 AI가 요구사항에서 벗어나지 않게 하였고, 이 기획서로 기능 문의에 답하는 봇도 운영하였습니다. 전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중입니다.</p>
       <figure class="figure">
         <a href="images/erp-architecture.svg"><img src="images/erp-architecture.svg" alt="ERP 아키텍처" /></a>
         <figcaption>web · api · shared 모노레포, MySQL, 기존 그룹웨어 export 데이터 마이그레이션, Docker · CI · 백업 운영 (클릭하면 크게)</figcaption>
