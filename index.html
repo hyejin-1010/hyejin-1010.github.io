@@ -314,7 +314,7 @@
     </ul>
     <div class="stack"><span>Vue 3</span><span>Vite</span><span>Pinia</span><span>Tailwind</span></div>
     <details class="deep"><summary>설계 결정과 교훈</summary>
-      <p><strong>현장 환경을 전제로.</strong> 사용자는 네트워크가 불안정한 건설 현장에서 앱을 사용합니다. 영상을 스트리밍으로 전환한 것도 같은 이유였으며, 계측 이벤트가 오프라인 동안 재전송 버퍼에 무한히 쌓이지 않도록 상한을 두고, API 응답시간 계측에는 URL 정규화를 적용해 개인정보 노출과 데이터 폭증을 방지하였습니다.</p>
+      <p><strong>현장 환경을 전제로.</strong> 사용자는 네트워크가 불안정한 건설 현장에서 앱을 사용합니다. 계측 이벤트가 오프라인 동안 재전송 버퍼에 무한히 쌓이지 않도록 상한을 두고, API 응답시간 계측에는 URL 정규화를 적용해 개인정보 노출을 방지하였습니다.</p>
       <p><strong>반복은 공통 함수로.</strong> 화면마다 흩어져 있던 이벤트 트래킹 호출을 공통 함수 하나로 추출해 일괄 적용하였습니다.</p>
     </details>
     <div class="shots">
@@ -338,7 +338,7 @@
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>Prisma · MySQL</span><span>Docker</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
       <p><strong>그룹웨어 전체가 아니라 실사용 4개만.</strong> 기존 그룹웨어 기능을 분석해 보니 실제로 쓰는 건 HR · 근태 · 휴가 · 전자결재였습니다. 메일 · 메신저는 범위 밖으로 못 박아, 단독으로 끝낼 수 있는 크기로 잘랐습니다.</p>
-      <p><strong>AI에 구현을 맡길수록 방향과 검증은 직접.</strong> 코드 작성은 Claude Code 바이브 코딩으로 진행하였습니다. 대신 기획서를 꼼꼼히 쓰고 구현하며 정해진 사항까지 계속 반영해 AI가 요구사항에서 벗어나지 않게 하였고, 이 기획서를 기반으로 기능 문의에 답하는 봇도 운영하였습니다. 테스트 코드는 처음부터 가장 중요하게 여겨 기능을 추가하거나 고칠 때마다 Playwright E2E 테스트를 함께 작성하였습니다. 전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중입니다.</p>
+      <p><strong>AI에 구현을 맡길수록 방향과 검증은 직접.</strong> 구현 중 정해진 사항까지 기획서에 계속 반영해 AI가 요구사항에서 벗어나지 않게 하였고, 이 기획서로 기능 문의에 답하는 봇도 운영하였습니다. 전자결재(기안 · 결재선 · 수신 · 참조), 휴가(신청 · 잔여 · 캘린더), 증명서 발급(PDF), 조직 · 계정 관리, 관리자 설정까지 출시 후 확장하며 실사용 중입니다.</p>
       <figure class="figure">
         <a href="images/erp-architecture.svg"><img src="images/erp-architecture.svg" alt="ERP 아키텍처" /></a>
         <figcaption>web · api · shared 모노레포, MySQL, 기존 그룹웨어 export 데이터 마이그레이션, Docker · CI · 백업 운영 (클릭하면 크게)</figcaption>
