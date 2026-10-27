@@ -309,7 +309,8 @@
     </p>
     <ul>
       <li><strong>현장 네트워크에 맞춘 영상 스트리밍 전환</strong>: 원본 파일을 그대로 재생해 인터넷이 느린 현장에서 로딩이 길고 자주 멈추던 안전교육 영상을, 네트워크 상태에 맞춰 화질을 조절하는 Cloudflare Stream으로 제안 · 전환. 시청 완료 감지도 함께 구현, 전환 이후 영상 재생 문의 0건</li>
-      <li><strong>네이티브 브릿지 연동</strong>: 인증 · 로그아웃 · 공유 · 뒤로가기를 postMessage로 앱과 연동하고, 웹 안의 링크를 앱이 받아 처리하도록 설계</li>
+      <li><strong>네이티브 브릿지 연동</strong>: 인증 · 로그아웃 · 공유 · 뒤로가기 등을 postMessage로 앱과 연동하고, 웹 안의 링크를 앱이 받아 처리하도록 설계</li>
+      <li><strong>브릿지 실패 · 앱 버전 대응</strong>: 앱이 예상하지 못한 방식으로 실패해 callback이 돌아오지 않으면 웹에서 이를 감지해 다른 방법으로 우회하고, 새 기능이 필요한 화면은 앱 버전을 확인해 업데이트를 안내</li>
       <li><strong>홈 팝업 체계 정합화</strong>: 성격이 다른 팝업들의 노출 우선순위 · 조건을 정리하고 공통 풀팝업으로 통합. 신규 팝업이 체계에 얹히는 구조로 정착</li>
     </ul>
     <div class="stack"><span>Vue 3</span><span>Vite</span><span>Pinia</span><span>Tailwind</span></div>
