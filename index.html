@@ -95,6 +95,9 @@
   .project li { padding-left: 20px; position: relative; font-size: 0.94rem; margin-bottom: 9px; color: var(--body); }
   .project li::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); opacity: .8; }
   .project li strong { color: var(--ink); }
+  .project li ul { margin: 6px 0 0; }
+  .project li li { font-size: 0.9rem; margin-bottom: 4px; }
+  .project li li::before { width: 4px; height: 4px; top: 0.7em; opacity: .5; }
   .stack { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }
   .stack span { font-size: 0.78rem; background: var(--chip); border-radius: 7px; padding: 3px 10px; color: var(--body); }
 
@@ -261,20 +264,31 @@
     <h3>가다 근로자앱 · 관리자앱 웹 (WebView 콘텐츠)</h3>
     <div class="meta"><span><b>2023.10 ~ 현재</b></span><span>근로자앱 · 관리자앱 공동 개발</span></div>
     <p class="desc">
-      앱 화면 대부분을 구성하는 WebView 웹 서비스입니다. 출역 지원 · 확인, 홈 팝업 · 배너 · 이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발하였습니다. 웹과 네이티브의 경계, 그리고 건설 현장의 불안정한 네트워크와 기기 환경에서 생기는 실패를 다루는 일을 주로 담당하였습니다.
+      앱 화면 대부분을 구성하는 WebView 웹 서비스입니다. 출역 지원 · 확인, 홈 팝업 · 배너 · 이벤트 구좌, 포인트몰, QR 안전교육 등 핵심 사용자 플로우를 개발하였고, 앱과 연결되는 브릿지 · 딥링크 처리와 느린 현장 네트워크에 맞춘 개선도 함께 맡았습니다.
     </p>
     <ul>
       <li><strong>현장 네트워크에 맞춘 영상 스트리밍 전환</strong>: 원본 파일을 그대로 재생해 인터넷이 느린 현장에서 로딩이 길고 자주 멈추던 안전교육 영상을, 네트워크 상태에 맞춰 화질을 조절하는 Cloudflare Stream으로 제안 · 전환. 시청 완료 감지도 함께 구현, 전환 이후 영상 재생 문의 0건</li>
       <li><strong>네이티브 브릿지 연동</strong>: 인증 · 로그아웃 · 공유 · 뒤로가기 등을 postMessage로 앱과 연동하고, 웹 안의 링크를 앱이 받아 처리하도록 설계</li>
       <li><strong>브릿지 실패 · 앱 버전 대응</strong>: 앱이 예상하지 못한 방식으로 실패해 callback이 돌아오지 않으면 웹에서 이를 감지해 다른 방법으로 우회하고, 새 기능이 필요한 화면은 앱 버전을 확인해 업데이트를 안내</li>
-      <li><strong>지원 플로우 A/B 테스트</strong>: 지원 과정을 길게 만들면 현장 정보를 꼼꼼히 읽은 근로자만 지원해 문의와 취소가 줄 것이라는 기획자의 가설을, 위치 · 유의사항 · 준비사항을 확인해야 지원할 수 있는 4단계 플로우로 구현해 A/B 테스트로 검증. 지원률이 크게 떨어질 것이라는 반대 우려는 A/B 지표로, 지원 후 현장 문의와 취소 감소는 CS · 운영 데이터로 함께 확인해 전면 전환하고, 실험이 끝난 기존 플로우와 분기 코드는 정리</li>
+      <li><strong>지원 플로우 A/B 테스트</strong>: 위치 · 유의사항 · 준비사항을 확인해야 지원할 수 있는 4단계 플로우를 구현해 기존 플로우와 비교
+        <ul>
+          <li>가설(기획): 지원 과정이 길어지면 현장 정보를 꼼꼼히 읽은 근로자만 지원해, 지원 후 문의와 취소가 줄 것</li>
+          <li>검증: 상세 페이지 진입 → 지원하기 클릭 → 지원 완료 퍼널로 지원이 크게 줄 것이라는 반대 우려를, CS · 운영 데이터로 지원 후 문의 · 취소 감소를 함께 확인</li>
+          <li>결과: 퍼널 전환율은 조금 낮아졌지만 유의미한 차이는 아니었고, 문의 · 취소는 줄어 전면 전환, 실험이 끝난 뒤 기존 플로우와 분기 코드는 직접 정리</li>
+          <li>이후 개선: 단계별 체류 시간을 Airbridge 이벤트로 직접 수집해, 체류가 지나치게 짧아 내용을 읽지 않고 넘기는 구간은 핵심 정보를 크게 보이게 하고, 지원은 클릭 대신 좌 → 우 스와이프로 완료하도록 바꾸는 등 개선</li>
+        </ul>
+      </li>
       <li><strong>홈 팝업 체계 정합화</strong>: 성격이 다른 팝업들의 노출 우선순위 · 조건을 정리하고 공통 풀팝업으로 통합. 신규 팝업이 체계에 얹히는 구조로 정착</li>
     </ul>
     <div class="stack"><span>Vue 3</span><span>Vite</span><span>Pinia</span><span>Tailwind</span></div>
-    <div class="shots">
-      <img class="thumb" src="images/worker-home.png" alt="근로자앱 홈" />
-      <img class="thumb" src="images/manager-home.png" alt="관리자앱 홈" />
-    </div>
+    <details class="deep"><summary>설계 판단과 배운 것</summary>
+      <p><strong>브릿지는 실패를 전제로.</strong> 앱이 예상하지 못한 방식으로 실패하면 응답 자체가 오지 않을 수 있어, 요청마다 callback이 돌아오는지 감지해 우회 경로를 두었습니다. 앱 업데이트가 꼭 필요한 기능은 웹에서 앱 버전을 먼저 확인해 업데이트를 안내하였습니다.</p>
+      <p><strong>전환율만으로는 가설을 확인할 수 없었다.</strong> 4단계 플로우의 목적은 "읽고 지원하게" 하는 것이었는데, 퍼널 전환율은 지원했는지만 알려 줄 뿐 읽었는지는 알려 주지 않았습니다. 그래서 단계별 체류 시간을 따로 수집해, 실제로 읽지 않고 넘기는 구간을 찾아 고쳤습니다.</p>
+      <figure class="figure">
+        <a href="images/gada-webview-bridge.svg"><img src="images/gada-webview-bridge.svg" alt="웹뷰 ↔ 앱 브릿지 구조" /></a>
+        <figcaption>웹뷰 ↔ 앱 브릿지: 버전 확인 · 요청 · callback 미수신 대응 (클릭하면 크게)</figcaption>
+      </figure>
+    </details>
   </article>
 
   <article class="project flagship">

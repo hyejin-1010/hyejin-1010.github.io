@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 296" font-family="Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif" font-size="11">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- 웹뷰 -->
+  <g stroke="#2563eb" stroke-width="1.4" fill="#eff6ff">
+    <rect x="14" y="14" width="250" height="268" rx="10"/>
+  </g>
+  <text x="139" y="36" text-anchor="middle" font-weight="700" fill="#1d4ed8">웹뷰 (Vue 3)</text>
+
+  <!-- 앱 -->
+  <g stroke="#111" stroke-width="1.4" fill="#fff">
+    <rect x="496" y="14" width="250" height="268" rx="10"/>
+  </g>
+  <text x="621" y="36" text-anchor="middle" font-weight="700">앱 (React Native)</text>
+
+  <!-- 웹 내부 단계 -->
+  <g stroke="#2563eb" stroke-width="1.2" fill="#fff">
+    <rect x="30" y="52" width="218" height="40" rx="8"/>
+    <rect x="30" y="112" width="218" height="40" rx="8"/>
+    <rect x="30" y="178" width="218" height="44" rx="8"/>
+    <rect x="30" y="232" width="218" height="40" rx="8"/>
+  </g>
+  <g fill="#111" text-anchor="middle">
+    <text x="139" y="70" font-weight="700">① 앱 버전 확인</text>
+    <text x="139" y="85" font-size="10" fill="#4b5563">미지원 버전이면 업데이트 안내</text>
+    <text x="139" y="130" font-weight="700">② 기능 요청 · 응답 대기</text>
+    <text x="139" y="145" font-size="10" fill="#4b5563">인증 · 로그아웃 · 공유 · 뒤로가기 등</text>
+    <text x="139" y="197" font-weight="700" fill="#dc2626">③ callback 미수신 감지</text>
+    <text x="139" y="213" font-size="10" fill="#4b5563">예상 밖 실패 → 다른 방법으로 우회</text>
+    <text x="139" y="250" font-weight="700">④ 웹 안의 링크 클릭</text>
+    <text x="139" y="265" font-size="10" fill="#4b5563">앱 화면으로 가는 링크</text>
+  </g>
+  <g stroke="#2563eb" stroke-width="1.2" fill="none" marker-end="url(#a)">
+    <path d="M139 92 L139 112"/>
+  </g>
+  <g stroke="#dc2626" stroke-width="1.2" fill="none" stroke-dasharray="4 3" marker-end="url(#r)">
+    <path d="M139 152 L139 178"/>
+  </g>
+  <text x="146" y="169" font-size="9.5" fill="#dc2626">응답 없음</text>
+
+  <!-- 앱 내부 -->
+  <g stroke="#111" stroke-width="1.2" fill="#fff">
+    <rect x="512" y="112" width="218" height="40" rx="8"/>
+    <rect x="512" y="232" width="218" height="40" rx="8"/>
+  </g>
+  <g fill="#111" text-anchor="middle">
+    <text x="621" y="130" font-weight="700">네이티브 기능 실행</text>
+    <text x="621" y="145" font-size="10" fill="#4b5563">인증 · 공유 · 화면 이동</text>
+    <text x="621" y="250" font-weight="700">웹 안의 링크 처리</text>
+    <text x="621" y="265" font-size="10" fill="#4b5563">앱이 받아 해당 화면으로 이동</text>
+  </g>
+
+  <!-- 브릿지 -->
+  <g stroke="#2563eb" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M248 124 L512 124"/>
+    <path d="M512 142 L248 142"/>
+    <path d="M248 252 L512 252"/>
+  </g>
+  <g font-size="10.5" text-anchor="middle">
+    <text x="380" y="117" fill="#1d4ed8" font-weight="700">postMessage 요청</text>
+    <text x="380" y="158" fill="#1d4ed8">callback 응답</text>
+    <text x="380" y="245" fill="#1d4ed8">링크 전달</text>
+  </g>
+</svg>
