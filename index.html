@@ -306,7 +306,7 @@
     </ul>
     <div class="stack"><span>Vue 3</span><span>TypeScript</span><span>React Native</span><span>Laravel</span><span>react-native-webview</span><span>토스페이먼츠 SDK</span></div>
     <details class="deep"><summary>결제에서 무엇을 지키려 했나</summary>
-      <p><strong>돈이 오간 뒤의 실패가 가장 위험하다.</strong> 결제창에서 돌아와 주문 접수가 실패하는 경우, 사용자는 결제가 됐는지 알 수 없습니다. 이때 "다시 결제"를 띄우면 이중 청구가 될 수 있어, 청구 여부가 불확실한 서버 오류와 청구되지 않은 승인 실패를 나눠 다른 행동을 안내하였습니다. 서버도 같은 기준으로, 승인 전에는 금액 재계산 · 중복 결제를 막고, 승인 후 실패는 결제 정보를 남겨 환불하거나 주문을 직접 등록할 수 있게 하였습니다. 차수별 공동구매라 운영팀이 직접 확인할 수 있는 규모여서 이중 결제를 확실히 막는 것을 먼저 택했고, 규모가 커지면 저장 실패 시 자동 결제 취소와 결제 상태 대조로 넘어가야 한다고 보았습니다.</p>
+      <p><strong>돈이 오간 뒤의 실패가 가장 위험하다.</strong> 결제 후 주문 접수가 실패하면 사용자는 결제됐는지 알 수 없어, "다시 결제"를 띄우면 이중 청구가 될 수 있습니다. 그래서 청구됐을 수 있는 실패는 재결제를 막고 결제 정보를 남겼고, 청구 전 실패만 재주문으로 안내했습니다. 운영팀이 직접 확인할 수 있는 규모라 이 방식을 택했고, 규모가 커지면 자동 결제 취소가 필요하다고 보았습니다.</p>
       <p><strong>허용 목록과 상태 전환을 같은 기준으로 쓰지 않는다.</strong> about:blank 문제는 "열어도 되는 URL"과 "결제가 끝났다고 볼 URL"을 한 목록으로 판단해서 생겼습니다. 두 판단을 함수로 나눈 덕분에, 이후 iOS 나가기 헤더도 같은 결제 상태 위에 바로 얹을 수 있었습니다.</p>
       <figure class="figure">
         <a href="images/mro-webview-payment.svg"><img src="images/mro-webview-payment.svg" alt="웹뷰 카드결제 흐름과 실패 분기" /></a>
