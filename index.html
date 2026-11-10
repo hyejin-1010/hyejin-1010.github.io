@@ -213,7 +213,7 @@
       <div class="chips"><span class="chip">React Native</span><span class="chip">TanStack Query</span><span class="chip">Zustand</span><span class="chip">NativeWind</span></div>
     </div>
     <div class="skill-group"><h3>개발 생산성 · 인프라 · 분석</h3>
-      <div class="chips"><span class="chip">Fastlane</span><span class="chip">Bitbucket Pipelines</span><span class="chip">OTA (Hot Updater)</span><span class="chip">Docker</span><span class="chip">Jest</span><span class="chip">Playwright · Maestro</span><span class="chip">Claude Code 에이전트 오케스트레이션</span><span class="chip">Google Analytics · GTM</span><span class="chip">Airbridge</span></div>
+      <div class="chips"><span class="chip">Fastlane</span><span class="chip">Bitbucket Pipelines</span><span class="chip">OTA (Hot Updater)</span><span class="chip">Docker</span><span class="chip">Jest</span><span class="chip">Playwright · Maestro</span><span class="chip">Claude Code 에이전트 오케스트레이션</span><span class="chip">Sentry · Firebase Crashlytics</span><span class="chip">Google Analytics · GTM</span><span class="chip">Airbridge</span></div>
     </div>
     <div class="skill-group"><h3>BACKEND (확장 중)</h3>
       <div class="chips"><span class="chip">NestJS · Prisma · MySQL</span><span class="chip">FastAPI · Python</span><span class="chip">Laravel · PHP</span></div>
@@ -241,7 +241,8 @@
       <li><strong>끊기지 않는 딥링크</strong>: 푸시 · 배너 · 트래킹 링크로 들어온 사용자가 앱 기동 · OTA 재시작 · 로그인 · 간편인증을 거쳐도 목적지가 보존되도록, 앱이 링크를 보관했다가 인증이 끝나면 처리하는 흐름을 웹과 함께 설계. 적용 이후 딥링크 유실 문의 0건</li>
       <li><strong>디퍼드 딥링크 유실 대응</strong>: 앱 설치 후 첫 실행 시 OTA 업데이트로 앱이 다시 로드되며 Airbridge 디퍼드 딥링크가 사라지던 문제를, 업데이트 확인 전에 링크를 저장해 두었다가 새 번들이 로드된 뒤 해당 화면으로 이동하도록 처리</li>
       <li><strong>앱 GA 이벤트 개편</strong>: 관리자앱은 GTM으로 웹 이벤트만 쌓이고 앱 이벤트는 빠지고 있던 상황. 앱용 GTM을 따로 두는 대신 앱에서 GA로 직접 보내고, 웹뷰 이벤트도 postMessage로 앱이 받아 함께 보내도록 개편하면서 기획자와 이벤트를 다시 설계 · 정리</li>
-      <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태를 저장하고 재진입 시 이어서 처리하도록 개선</li>
+      <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태를 저장하고 재진입 시 인증 요청을 다시 보내지 않고 이어서 처리하도록 개선. 웹 화면을 먼저 복원하고 네이티브 인증 화면을 얹는 순서까지 테스트로 고정</li>
+      <li><strong>iOS 사진 첨부 크래시 추적</strong>: 사진을 고르면 앱이 강제 종료되던 문제를 라이브러리 네이티브 코드까지 따라가, 선택 완료와 시트 닫힘 취소가 콜백을 두 번 호출하는 원인(가드 누락)을 찾고 patch-package로 수정</li>
       <li>오픈소스 기여: ChannelTalk Flutter SDK에 API 추가 PR 머지 (v4.1.0)</li>
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
@@ -269,7 +270,7 @@
     <ul>
       <li><strong>현장 네트워크에 맞춘 영상 스트리밍 전환</strong>: 원본 파일을 그대로 재생해 인터넷이 느린 현장에서 로딩이 길고 자주 멈추던 안전교육 영상을, 네트워크 상태에 맞춰 화질을 조절하는 Cloudflare Stream으로 제안 · 전환. 시청 완료 감지도 함께 구현, 전환 이후 영상 재생 문의 0건</li>
       <li><strong>네이티브 브릿지 연동</strong>: 인증 · 로그아웃 · 공유 · 뒤로가기 등을 postMessage로 앱과 연동</li>
-      <li><strong>브릿지 실패 · 앱 버전 대응</strong>: 앱이 예상하지 못한 방식으로 실패해 callback이 돌아오지 않으면 웹에서 이를 감지해 다른 방법으로 우회하고, 새 기능이 필요한 화면은 앱 버전을 확인해 업데이트를 안내</li>
+      <li><strong>브릿지 실패 · 앱 버전 대응</strong>: 앱이 예상하지 못한 방식으로 실패해 callback이 돌아오지 않으면 웹에서 이를 감지해 다른 방법으로 우회하고, 새 기능이 필요한 화면은 앱 버전을 확인해 업데이트를 안내. iOS에서만 강제 업데이트를 건너뛸 수 있던 원인(업데이트 이동 시 버전 쿠키 삭제, Android는 앱 종료로 드러나지 않음)을 찾아 수정</li>
       <li><strong>지원 플로우 A/B 테스트</strong>: 위치 · 유의사항 · 준비사항을 확인해야 지원할 수 있는 4단계 플로우를 기존 플로우와 비교한 실험. 초기 구현은 동료가 맡았고, 실험 이후 정리와 개선을 맡음
         <ul>
           <li>가설(기획): 지원 과정이 길어지면 현장 정보를 꼼꼼히 읽은 근로자만 지원해, 지원 후 문의와 취소가 줄 것</li>
@@ -287,6 +288,31 @@
       <figure class="figure">
         <a href="images/gada-webview-bridge.svg"><img src="images/gada-webview-bridge.svg" alt="웹뷰 ↔ 앱 브릿지 구조" /></a>
         <figcaption>웹뷰 ↔ 앱 브릿지: 버전 확인 · 요청 · callback 미수신 대응 (클릭하면 크게)</figcaption>
+      </figure>
+    </details>
+  </article>
+
+  <article class="project">
+    <h3>가다 구매대행(MRO) 커머스 · 웹뷰 카드결제</h3>
+    <div class="meta"><span><b>2026.06 ~ 2026.09</b></span><span>웹 화면 · 앱 결제 연동 담당</span></div>
+    <p class="desc">
+      근로자가 앱에서 작업 자재를 구매하는 구매대행 커머스입니다. 상품 목록 · 상세 · 주문서 · 주문 내역을 웹뷰로 만들고, 토스페이먼츠 카드결제를 붙였습니다.
+      브라우저에서는 당연히 되는 결제가 앱 웹뷰에서는 단계마다 막혀, 웹과 앱 양쪽에서 결제 흐름을 직접 연결하였습니다. 재직 중 4차 판매까지 이어서 운영하였습니다.
+    </p>
+    <ul>
+      <li><strong>커머스 화면</strong>: 옵션 추가금 · 품절 · 배송비 정책을 반영한 주문서와 결제 금액 카드, 주문 내역</li>
+      <li><strong>중복 접수 · 중복 결제 방지</strong>: 결제창을 다녀온 뒤 주문을 접수하는 데 쓰는 임시 주문 정보를 한 번만 쓰고 지워, 완료 화면 새로고침 · 뒤로가기로 같은 주문이 다시 접수되지 않게 처리. 접수 실패 시 서버 오류는 이미 결제됐을 수 있어 재결제 대신 고객센터로, 승인 실패 · 금액 불일치는 청구 전이라 재주문으로 안내를 나눔</li>
+      <li><strong>웹뷰에서 카드사 앱 실행</strong>: iOS 앱 스킴 · Android intent(형식이 다른 현대카드 앱카드 포함) · window.open으로 앱을 여는 간편결제까지 외부 앱으로 연결</li>
+      <li><strong>about:blank 결제 차단 추적</strong>: 결제 중 카드사 페이지가 차단되던 문제를, 웹뷰로 들어오는 URL과 결제 상태를 로그로 찍어 추적. 리다이렉트 중간의 about:blank를 "자사 페이지 복귀"로 판단해 결제 모드가 꺼지던 것이 원인이라, 판단 기준을 분리하고 이동 이벤트 양쪽에서 상태를 맞추도록 수정</li>
+      <li><strong>결제창 이탈</strong>: iOS에서 외부 결제창에 갇히던 문제는 결제 페이지에서만 나가기 헤더를 띄워 웹의 결제 취소 화면으로 보내 상태까지 정리하고, Android는 결제 후 뒤로가기가 결제창으로 돌아가지 않게 히스토리 정리</li>
+    </ul>
+    <div class="stack"><span>Vue 3</span><span>React Native</span><span>react-native-webview</span><span>토스페이먼츠 SDK</span></div>
+    <details class="deep"><summary>결제에서 무엇을 지키려 했나</summary>
+      <p><strong>돈이 오간 뒤의 실패가 가장 위험하다.</strong> 결제창에서 돌아와 주문 접수가 실패하는 경우, 사용자는 결제가 됐는지 알 수 없습니다. 이때 "다시 결제"를 띄우면 이중 청구가 될 수 있어, 청구 여부가 불확실한 서버 오류와 청구되지 않은 승인 실패를 나눠 다른 행동을 안내하였습니다.</p>
+      <p><strong>허용 목록과 상태 전환을 같은 기준으로 쓰지 않는다.</strong> about:blank 문제는 "열어도 되는 URL"과 "결제가 끝났다고 볼 URL"을 한 목록으로 판단해서 생겼습니다. 두 판단을 함수로 나눈 덕분에, 이후 iOS 나가기 헤더도 같은 결제 상태 위에 바로 얹을 수 있었습니다.</p>
+      <figure class="figure">
+        <a href="images/mro-webview-payment.svg"><img src="images/mro-webview-payment.svg" alt="웹뷰 카드결제 흐름과 실패 분기" /></a>
+        <figcaption>웹뷰 카드결제 흐름: 앱이 처리한 지점과 접수 실패 분기 (클릭하면 크게)</figcaption>
       </figure>
     </details>
   </article>

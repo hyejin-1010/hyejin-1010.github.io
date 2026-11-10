@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif" font-size="11">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <!-- 상단 흐름 -->
+  <g stroke="#2563eb" stroke-width="1.2" fill="#eff6ff">
+    <rect x="14" y="20" width="150" height="54" rx="8"/>
+    <rect x="590" y="20" width="156" height="54" rx="8"/>
+  </g>
+  <g stroke="#111" stroke-width="1.2" fill="#fff">
+    <rect x="206" y="20" width="160" height="54" rx="8"/>
+    <rect x="398" y="20" width="160" height="54" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#111">
+    <text x="89" y="42" font-weight="700" fill="#1d4ed8">① 주문서 (웹)</text>
+    <text x="89" y="59" font-size="10" fill="#4b5563">임시 주문 정보 저장</text>
+    <text x="286" y="42" font-weight="700">② 토스 결제창</text>
+    <text x="286" y="59" font-size="10" fill="#4b5563">결제 모드 ON</text>
+    <text x="478" y="42" font-weight="700">③ 카드사 · 간편결제</text>
+    <text x="478" y="59" font-size="10" fill="#4b5563">페이지 또는 외부 앱</text>
+    <text x="668" y="42" font-weight="700" fill="#1d4ed8">④ 복귀 · 주문 접수</text>
+    <text x="668" y="59" font-size="10" fill="#4b5563">임시 정보는 1회 사용 후 삭제</text>
+  </g>
+  <g stroke="#2563eb" stroke-width="1.4" fill="none" marker-end="url(#a)">
+    <path d="M164 47 L206 47"/>
+    <path d="M366 47 L398 47"/>
+    <path d="M558 47 L590 47"/>
+  </g>
+
+  <!-- 앱 웹뷰 처리 -->
+  <g stroke="#111" stroke-width="1.2" fill="#fafafa">
+    <rect x="206" y="104" width="352" height="118" rx="10"/>
+  </g>
+  <text x="382" y="124" text-anchor="middle" font-weight="700">앱 웹뷰 (React Native)가 처리한 것</text>
+  <g fill="#111" font-size="10.5">
+    <text x="222" y="146">· 결제 모드 동안만 외부 PG 도메인 허용</text>
+    <text x="222" y="164">· 앱 스킴 · Android intent(현대카드 intent: 포함) → 외부 앱 실행</text>
+    <text x="222" y="182">· window.open 셀프 오픈 PG → onOpenWindow로 받아 실행</text>
+    <text x="222" y="200" fill="#dc2626">· 리다이렉트 중 about:blank는 결제 모드를 유지</text>
+    <text x="222" y="216" fill="#4b5563">· iOS 외부 결제창에서만 나가기 헤더 → 결제 취소 화면</text>
+  </g>
+  <g stroke="#111" stroke-width="1" fill="none" stroke-dasharray="3 3">
+    <path d="M286 74 L286 104"/>
+    <path d="M478 74 L478 104"/>
+  </g>
+
+  <!-- 실패 분기 -->
+  <g stroke="#dc2626" stroke-width="1.2" fill="#fef2f2">
+    <rect x="590" y="118" width="156" height="62" rx="8"/>
+    <rect x="590" y="200" width="156" height="62" rx="8"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="668" y="138" font-weight="700" fill="#b91c1c">서버 오류 (5xx)</text>
+    <text x="668" y="154" font-size="10" fill="#4b5563">이미 결제됐을 수 있음</text>
+    <text x="668" y="169" font-size="10" fill="#111">→ 재결제 대신 고객센터</text>
+    <text x="668" y="220" font-weight="700" fill="#b91c1c">승인 실패 · 금액 불일치</text>
+    <text x="668" y="236" font-size="10" fill="#4b5563">청구되지 않음</text>
+    <text x="668" y="251" font-size="10" fill="#111">→ 주문서로 재주문</text>
+  </g>
+  <g stroke="#dc2626" stroke-width="1.2" fill="none" marker-end="url(#r)">
+    <path d="M668 74 L668 118"/>
+    <path d="M746 62 L754 62 L754 231 L748 231"/>
+  </g>
+  <text x="674" y="98" font-size="9.5" fill="#dc2626">접수 실패</text>
+
+  <!-- 범례 -->
+  <text x="14" y="288" font-size="10" fill="#4b5563">파란색: 웹(Vue 3) · 검은색: 결제사 · 앱 · 빨간색: 실패 처리 · 상태가 어긋나기 쉬운 지점</text>
+</svg>
