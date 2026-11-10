@@ -61,7 +61,7 @@
   <g text-anchor="middle">
     <text x="668" y="138" font-weight="700" fill="#b91c1c">서버 오류 (5xx)</text>
     <text x="668" y="154" font-size="10" fill="#4b5563">이미 결제됐을 수 있음</text>
-    <text x="668" y="169" font-size="10" fill="#111">→ 재결제 대신 고객센터</text>
+    <text x="668" y="169" font-size="10" fill="#111">→ 재결제 막고 정산 기록</text>
     <text x="668" y="220" font-weight="700" fill="#b91c1c">승인 실패 · 금액 불일치</text>
     <text x="668" y="236" font-size="10" fill="#4b5563">청구되지 않음</text>
     <text x="668" y="251" font-size="10" fill="#111">→ 주문서로 재주문</text>
