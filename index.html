@@ -299,7 +299,7 @@
     </p>
     <ul>
       <li><strong>커머스 화면</strong>: 옵션 추가금 · 품절 · 배송비 정책을 반영한 주문서와 결제 금액 카드, 주문 내역. 서버는 배송비 정책을 차수 단위로 옮기고, 주문 시점의 정가 · 옵션 추가금을 스냅샷으로 저장</li>
-      <li><strong>운영 어드민</strong>: 백오피스의 상품 등록 · 차수 관리 · 이미지 업로드 · 상태(숨김 · 품절) 관리와, 단품 · 세트 상품의 옵션별 추가금을 편집하는 화면과 관리 API(Laravel)를 직접 기획 · 구현해 배포. 운영 중인 상품을 고쳐도 옵션 key가 바뀌지 않도록 하고, 예전 형식의 옵션 데이터도 읽어 새 형식으로 저장되게 처리해 테스트로 고정</li>
+      <li><strong>운영 어드민</strong>: 백오피스의 상품 등록 · 차수 관리 · 이미지 업로드 · 상태(숨김 · 품절) 관리와, 단품 · 세트 상품의 옵션별 추가금을 편집하는 화면과 관리 API(Laravel)를 직접 기획 · 구현해 배포</li>
       <li><strong>서버 결제 승인</strong>: 토스 승인 API 연동. 승인 금액은 클라이언트가 보낸 값이 아니라 서버가 옵션 추가금까지 다시 계산한 주문 금액으로 고정하고, 같은 결제(orderId)로 이미 저장된 주문이 있으면 승인 전에 차단. 승인 후 주문 저장이 실패하면 결제 키 · 금액을 정산용 로그로 남기고 고객센터 안내로 응답</li>
       <li><strong>중복 접수 · 중복 결제 방지</strong>: 결제창을 다녀온 뒤 주문을 접수하는 데 쓰는 임시 주문 정보를 한 번만 쓰고 지워, 완료 화면 새로고침 · 뒤로가기로 같은 주문이 다시 접수되지 않게 처리. 접수 실패 시 서버 오류는 이미 결제됐을 수 있어 재결제 대신 고객센터로, 승인 실패 · 금액 불일치는 청구 전이라 재주문으로 안내를 나눔</li>
       <li><strong>웹뷰에서 카드사 앱 실행</strong>: iOS 앱 스킴 · Android intent(형식이 다른 현대카드 앱카드 포함) · window.open으로 앱을 여는 간편결제까지 외부 앱으로 연결</li>
@@ -331,7 +331,7 @@
       <li><strong>정형 문서 자동 생성</strong>: 엑셀 한 장 → 커스텀 컴포넌트 → PDF/xlsx. 건당 평균 2시간 걸리던 수기 작업을 요청자 셀프서비스로 전환, 개발자 관여 5분 이내</li>
       <li><strong>워치독 4종</strong>: 자동화가 조용히 멈추는 침묵 실패를 감지해 경보 · 자동 복구</li>
     </ul>
-    <div class="stack"><span>Python</span><span>Slack Socket Mode</span><span>AI 에이전트 오케스트레이션</span><span>launchd</span></div>
+    <div class="stack"><span>Python</span><span>Slack</span><span>AI 에이전트 오케스트레이션</span></div>
     <details class="deep"><summary>설계 원칙과 안전장치</summary>
       <p><strong>사람은 판단에만.</strong> 크래시 수집 → 이슈 등록 → 코드 작업 → PR 생성 → 배포 상태 전이까지 자동으로 돌되, 리뷰 · 머지라는 판단 지점은 반드시 사람이 잡습니다. AI가 만든 PR은 사람 리뷰를 통과해야만 반영되고, 문서 생성은 렌더 검증을 통과해야만 커밋됩니다.</p>
       <p><strong>자동화를 감시하는 자동화.</strong> 가장 위험한 건 조용히 멈추는 것입니다. 파이프라인 실패 · 봇 연결 끊김 · 수집 키 오염 · 토큰 만료를 각각 감시하는 워치독 4종을 두고, 감지 시 경보 또는 자동 복구합니다.</p>
@@ -396,7 +396,7 @@
     </p>
     <ul>
       <li><strong>연 1,200만 원 규모의 그룹웨어 구독을 자체 ERP로 대체</strong>: 기존 그룹웨어 기능 분석과 인사팀 중심 직원 인터뷰로 본부별 양식 중복 · 처리자 위임 절차 · 기안 알림 부재 같은 불편을 정리 → HR · 근태 · 휴가 · 전자결재로 범위 정의, 기존 데이터 마이그레이션 포함 <strong>한 달 만에 출시해 현재 사내 실사용 중</strong></li>
-      <li><strong>AI에 구현을, 방향과 검증은 직접</strong>: Claude Code 바이브 코딩으로 구현하되 생성된 코드는 직접 검토하고, 구현 중 결정된 사항까지 기획서에 반영해 방향을 고정. 처음부터 Playwright E2E 테스트로 검증</li>
+      <li><strong>AI에 구현을, 방향과 검증은 직접</strong>: Claude Code로 구현하되 생성된 코드는 직접 검토하고, 구현 중 결정된 사항까지 기획서에 반영해 방향을 고정. 처음부터 Playwright E2E 테스트로 검증</li>
     </ul>
     <div class="stack"><span>Next.js · React</span><span>NestJS</span><span>TypeScript</span><span>Prisma · MySQL</span><span>Docker</span></div>
     <details class="deep"><summary>범위를 어떻게 잘랐고, 어떻게 생겼나</summary>
