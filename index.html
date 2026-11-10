@@ -242,7 +242,6 @@
       <li><strong>디퍼드 딥링크 유실 대응</strong>: 앱 설치 후 첫 실행 시 OTA 업데이트로 앱이 다시 로드되며 Airbridge 디퍼드 딥링크가 사라지던 문제를, 업데이트 확인 전에 링크를 저장해 두었다가 새 번들이 로드된 뒤 해당 화면으로 이동하도록 처리</li>
       <li><strong>앱 GA 이벤트 개편</strong>: 관리자앱은 GTM으로 웹 이벤트만 쌓이고 앱 이벤트는 빠지고 있던 상황. 앱용 GTM을 따로 두는 대신 앱에서 GA로 직접 보내고, 웹뷰 이벤트도 postMessage로 앱이 받아 함께 보내도록 개편하면서 기획자와 이벤트를 다시 설계 · 정리</li>
       <li><strong>간편인증 중 앱 종료 복구</strong>: 건강검진서 등록 중 외부 인증앱에 다녀오는 사이 OS가 앱을 종료해 진행이 사라지던 문제를, 진행 상태를 저장하고 재진입 시 인증 요청을 다시 보내지 않고 이어서 처리하도록 개선. 웹 화면을 먼저 복원하고 네이티브 인증 화면을 얹는 순서까지 테스트로 고정</li>
-      <li><strong>iOS 사진 첨부 크래시 추적</strong>: 사진을 고르면 앱이 강제 종료되던 문제를 라이브러리 네이티브 코드까지 따라가, 선택 완료와 시트 닫힘 취소가 콜백을 두 번 호출하는 원인(가드 누락)을 찾고 patch-package로 수정</li>
       <li>오픈소스 기여: ChannelTalk Flutter SDK에 API 추가 PR 머지 (v4.1.0)</li>
     </ul>
     <div class="stack"><span>React Native</span><span>TypeScript</span><span>TanStack Query</span><span>Zustand</span><span>NativeWind</span><span>Fastlane</span><span>Hot Updater</span></div>
