@@ -28,7 +28,7 @@
   </g>
   <path d="M218 102 L282 102" stroke="#2563eb" stroke-width="1.4" fill="none" marker-end="url(#a)" marker-start="url(#a)"/>
   <text x="250" y="96" font-size="9" fill="#1d4ed8" text-anchor="middle">REST</text>
-  <text x="250" y="160" font-size="9.5" fill="#6b7280" text-anchor="middle">packages/shared: 타입·스키마 공유</text>
+  <text x="250" y="160" font-size="9.5" fill="#6b7280" text-anchor="middle">packages/shared: API 응답 타입·enum 공유</text>
 
   <!-- DB -->
   <g>
