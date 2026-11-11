@@ -55,7 +55,7 @@
   nav a { color: var(--body); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
   nav a:hover { color: var(--accent); }
   nav a.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
-  section[id] { scroll-margin-top: 72px; }
+  section[id], article[id] { scroll-margin-top: 72px; }
 
   /* Hero */
   .hero { padding: 92px 0 72px; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -384,7 +384,7 @@
     </details>
   </article>
 
-  <article class="project">
+  <article class="project" id="erp">
     <h3>사내 ERP (HR · 근태 · 휴가 · 전자결재)</h3>
     <div class="meta"><span><b>2026.08 ~ 2026.10</b></span><span>기획 · 설계 · 구현 · 배포 단독 (근무 외 자기주도 프로젝트)</span></div>
     <p class="desc">
@@ -560,8 +560,9 @@
   function syncFromHash() {
     const id = location.hash.slice(1);
     const target = id && document.getElementById(id);
-    if (!target || !sections.includes(target)) return false;
-    activate(id);
+    if (!target) return false;
+    // #erp처럼 섹션 안 항목이면 URL은 건드리지 않고 그 항목으로만 이동 (탭 표시는 이후 스크롤 때 갱신)
+    if (sections.includes(target)) activate(id);
     pending = id;
     clearTimeout(pendingTimer);
     pendingTimer = setTimeout(() => { pending = null; }, 1200);
